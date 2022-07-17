@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-var POWER = 80
+var POWER = 40
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("left"):
 		apply_impulse(Vector2 (), Vector2(-POWER, 0))
 	if Input.is_action_pressed("right"):
