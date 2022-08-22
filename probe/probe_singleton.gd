@@ -1,3 +1,3 @@
 extends Node
 
-var rcs = 1
+var rcs = 100

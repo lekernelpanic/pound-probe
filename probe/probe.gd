@@ -1,11 +1,10 @@
 extends RigidBody2D
 
-var POWER = 60
-var IMPULSE_CONSUMPTION = 30
-var REFILL_SPEED = 10
+var POWER = 40
+var IMPULSE_CONSUMPTION = 50
+var REFILL_SPEED = 40
 
 func _input(event):
-	
 	if probe.rcs >= IMPULSE_CONSUMPTION:
 		if event.is_action_pressed("left"):
 			apply_impulse(Vector2 (), Vector2(-POWER, 0))
