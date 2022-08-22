@@ -19,5 +19,3 @@ texture = ExtResource( 2 )
 [node name="camera" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
-
-[node name="probe" type="Node2D" parent="."]

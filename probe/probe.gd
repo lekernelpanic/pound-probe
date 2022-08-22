@@ -1,13 +1,27 @@
 extends RigidBody2D
 
-var POWER = 80
+var POWER = 60
+var IMPULSE_CONSUMPTION = 30
+var REFILL_SPEED = 10
 
 func _input(event):
-	if event.is_action_pressed("left"):
-		apply_impulse(Vector2 (), Vector2(-POWER, 0))
-	if event.is_action_pressed("right"):
-		apply_impulse(Vector2 (), Vector2(POWER, 0))
-	if event.is_action_pressed("up"):
-		apply_impulse(Vector2 (), Vector2(0, -POWER))
-	if event.is_action_pressed("down"):
-		apply_impulse(Vector2 (), Vector2(0, POWER))
+	
+	if probe.rcs >= IMPULSE_CONSUMPTION:
+		if event.is_action_pressed("left"):
+			apply_impulse(Vector2 (), Vector2(-POWER, 0))
+			probe.rcs -= IMPULSE_CONSUMPTION
+		if event.is_action_pressed("right"):
+			apply_impulse(Vector2 (), Vector2(POWER, 0))
+			probe.rcs -= IMPULSE_CONSUMPTION
+		if event.is_action_pressed("up"):
+			apply_impulse(Vector2 (), Vector2(0, -POWER))
+			probe.rcs -= IMPULSE_CONSUMPTION
+		if event.is_action_pressed("down"):
+			apply_impulse(Vector2 (), Vector2(0, POWER))
+			probe.rcs -= IMPULSE_CONSUMPTION
+
+func _process(delta):
+	if probe.rcs < 100:
+		probe.rcs += delta * REFILL_SPEED
+	else:
+		probe.rcs = 100
