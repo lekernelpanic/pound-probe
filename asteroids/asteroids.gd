@@ -1,6 +1,6 @@
 extends Node2D
 
-var OCURENCES = 256
+var OCURENCES = 400
 var MAX_DISTANCE = 10000
 var MAX_SCALE = 8
 var MAX_LINEAR_VELOCITY = 100
@@ -11,7 +11,7 @@ var random = RandomNumberGenerator.new()
 
 func _ready():
 	random.randomize()
-	for n in range(OCURENCES):
+	for _n in range(OCURENCES):
 		add_child(_generate_asteroid())
 
 func _generate_asteroid():
