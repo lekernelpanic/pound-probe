@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stars/stars.tres" type="Material" id=1]
+
+[node name="stars" type="Particles2D"]
+amount = 50000
+lifetime = 32.0
+visibility_rect = Rect2( -10000, -10000, 20000, 20000 )
+process_material = ExtResource( 1 )

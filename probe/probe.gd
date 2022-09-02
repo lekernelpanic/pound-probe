@@ -9,7 +9,7 @@ var ZOOM_SMOOTHNESS = 0.005
 var MIN_ZOOM = 1
 var MAX_ZOOM = 3
 
-var zoom = 1
+var zoom = 0.5
 
 func _input(event):
 	if probe.rcs >= IMPULSE_CONSUMPTION:
