@@ -6,4 +6,4 @@
 script = ExtResource( 1 )
 
 [node name="canvas_modulate" type="CanvasModulate" parent="."]
-color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )

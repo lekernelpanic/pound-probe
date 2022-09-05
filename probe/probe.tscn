@@ -18,7 +18,7 @@ texture = ExtResource( 2 )
 [node name="light" type="Light2D" parent="."]
 position = Vector2( -3, -1 )
 texture = ExtResource( 3 )
-texture_scale = 8.0
+texture_scale = 16.0
 shadow_enabled = true
 shadow_gradient_length = 2.0
 shadow_filter = 5
