@@ -18,6 +18,6 @@ motion_mirroring = Vector2( 20000, 20000 )
 
 [node name="stars" parent="parallax_background/parallax_layer" instance=ExtResource( 4 )]
 
-[node name="probe" parent="." instance=ExtResource( 1 )]
-
 [node name="asteroids" parent="." instance=ExtResource( 3 )]
+
+[node name="probe" parent="." instance=ExtResource( 1 )]

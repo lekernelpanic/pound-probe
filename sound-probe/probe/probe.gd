@@ -6,7 +6,7 @@ var REFILL_SPEED = 40
 
 var UNZOOM_SCALE = 128
 var ZOOM_SMOOTHNESS = 0.005
-var MIN_ZOOM = 2
+var MIN_ZOOM = 1.5
 var MAX_ZOOM = 3
 
 var zoom = 0.5
