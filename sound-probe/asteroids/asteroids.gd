@@ -7,7 +7,10 @@ var MAX_SCALE = 2
 var MAX_LINEAR_VELOCITY = 100
 var MAX_ANGULAR_VELOCITY = 0.2
 
-var asteroid_scene = preload("res://asteroids/asteroid/asteroid.tscn")
+var asteroid_scenes = [
+		preload("res://asteroids/asteroid_0/asteroid.tscn"),
+		preload("res://asteroids/asteroid_1/asteroid.tscn")
+	]
 var random = RandomNumberGenerator.new()
 
 func _ready():
@@ -16,7 +19,8 @@ func _ready():
 		add_child(_generate_asteroid())
 
 func _generate_asteroid():
-	var asteroid = asteroid_scene.instance();
+	var asteroid_index = random.randi_range(0, asteroid_scenes.size() - 1)
+	var asteroid = asteroid_scenes[asteroid_index].instance();
 	
 	var distance = sqrt(random.randf_range(0, pow(MAX_DISTANCE, 2)))
 	var angle = random.randf_range(0, 2 * PI)

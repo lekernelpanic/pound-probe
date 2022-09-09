@@ -1,20 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://asteroids/asteroid/asteroid.gd" type="Script" id=1]
-[ext_resource path="res://asteroids/asteroid/asteroid.png" type="Texture" id=2]
-[ext_resource path="res://asteroids/asteroid/normal_map.png" type="Texture" id=3]
+[ext_resource path="res://asteroids/asteroid.gd" type="Script" id=1]
+[ext_resource path="res://asteroids/asteroid_0/normal_map.png" type="Texture" id=2]
+[ext_resource path="res://asteroids/asteroid_0/asteroid.png" type="Texture" id=3]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 cull_mode = 1
 polygon = PoolVector2Array( -139, -255, -51, -230, 98, -128, 143, -56, 204, 22, 237, 107, 218, 179, 141, 206, 50, 236, -57, 256, -162, 228, -223, 157, -220, -48, -237, -139, -210, -223 )
 
 [node name="asteroid" type="RigidBody2D"]
-can_sleep = false
 script = ExtResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-normal_map = ExtResource( 3 )
+texture = ExtResource( 3 )
+normal_map = ExtResource( 2 )
 
 [node name="collision_polygon" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -139, -255, -51, -230, 98, -128, 143, -56, 204, 22, 237, 107, 218, 179, 141, 206, 50, 236, -57, 256, -162, 228, -223, 157, -220, -48, -237, -139, -210, -223 )
