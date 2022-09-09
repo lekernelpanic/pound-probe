@@ -9,7 +9,8 @@ var MAX_ANGULAR_VELOCITY = 0.2
 
 var asteroid_scenes = [
 		preload("res://asteroids/asteroid_0/asteroid.tscn"),
-		preload("res://asteroids/asteroid_1/asteroid.tscn")
+		preload("res://asteroids/asteroid_1/asteroid.tscn"),
+		preload("res://asteroids/asteroid_2/asteroid.tscn")
 	]
 var random = RandomNumberGenerator.new()
 
