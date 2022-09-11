@@ -14,10 +14,6 @@ config/name="Sound probe"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-probe="*res://probe/probe_singleton.gd"
-
 [display]
 
 window/size/width=3840
