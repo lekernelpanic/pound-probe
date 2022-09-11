@@ -31,4 +31,5 @@ func _generate_asteroid():
 	asteroid.applied_scale = random.randf_range(MIN_SCALE, MAX_SCALE)
 	asteroid.linear_velocity = Vector2(random.randf_range(-100, 100), random.randf_range(-MAX_LINEAR_VELOCITY, MAX_LINEAR_VELOCITY))
 	asteroid.angular_velocity = random.randf_range(0, MAX_ANGULAR_VELOCITY)
+	
 	return asteroid

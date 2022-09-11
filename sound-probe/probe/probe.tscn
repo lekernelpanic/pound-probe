@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://probe/probe.gd" type="Script" id=1]
 [ext_resource path="res://probe/probe.png" type="Texture" id=2]
 [ext_resource path="res://probe/light.png" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
 
 [node name="probe" type="RigidBody2D"]
 can_sleep = false
@@ -13,6 +16,7 @@ script = ExtResource( 1 )
 polygon = PoolVector2Array( -51, -256, -39, -250, -25, -256, -18, -249, -10, -240, -13, -222, -21, -220, -31, -223, -39, -222, -47, -215, -42, -200, -37, -191, -21, -176, -17, -155, -19, -135, 7, -110, -4, -104, 4, -92, 13, -72, -3, -74, -11, -62, -17, -51, 192, 78, 191, 80, -33, -58, -45, -55, -38, -37, -30, -22, -14, -1, -26, 28, -35, 21, -42, -22, -51, -38, -54, -40, -118, 256, -122, 255, -57, -42, -66, -49, -187, 57, -192, 50, -69, -57, -62, -68, -78, -63, -102, -59, -124, -65, -137, -90, -135, -112, -127, -137, -112, -159, -94, -177, -70, -191, -68, -208, -66, -226, -62, -240 )
 
 [node name="sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="light" type="Light2D" parent="."]
