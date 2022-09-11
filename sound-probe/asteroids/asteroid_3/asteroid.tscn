@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://asteroids/asteroid_3/normal_map.png" type="Texture" id=1]
+[ext_resource path="res://asteroids/asteroid_3/asteroid.png" type="Texture" id=2]
+[ext_resource path="res://asteroids/asteroid.gd" type="Script" id=3]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+cull_mode = 1
+polygon = PoolVector2Array( -123, -226, -62, -229, 9, -219, 81, -211, 155, -173, 207, -110, 239, -60, 256, 12, 246, 70, 219, 133, 190, 173, 127, 211, 66, 229, -17, 226, -70, 214, -116, 192, -159, 151, -209, 107, -242, 56, -256, -11, -249, -69, -223, -116, -194, -167, -156, -200 )
+
+[node name="asteroid" type="RigidBody2D"]
+script = ExtResource( 3 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+normal_map = ExtResource( 1 )
+
+[node name="collision_polygon" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -123, -226, -62, -229, 9, -219, 81, -211, 155, -173, 207, -110, 239, -60, 256, 12, 246, 70, 219, 133, 190, 173, 127, 211, 66, 229, -17, 226, -70, 214, -116, 192, -159, 151, -209, 107, -242, 56, -256, -11, -249, -69, -223, -116, -194, -167, -156, -200 )
+
+[node name="light_occluder" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )
