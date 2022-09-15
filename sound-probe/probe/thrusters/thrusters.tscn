@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://probe/thrusters/particles.tres" type="Material" id=1]
+[ext_resource path="res://probe/thrusters/thrusters.ogg" type="AudioStream" id=2]
+[ext_resource path="res://probe/thrusters/particle.png" type="Texture" id=3]
+[ext_resource path="res://probe/thrusters/thrusters.gd" type="Script" id=4]
+
+[node name="thrusters" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="audio_stream_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -16.0
+
+[node name="particles" type="Node2D" parent="."]
+
+[node name="left" type="Particles2D" parent="particles"]
+rotation = 3.14159
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
+
+[node name="right" type="Particles2D" parent="particles"]
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
+
+[node name="up" type="Particles2D" parent="particles"]
+rotation = 4.71239
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
+
+[node name="down" type="Particles2D" parent="particles"]
+rotation = 1.5708
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
