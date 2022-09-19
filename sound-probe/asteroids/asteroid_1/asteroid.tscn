@@ -9,7 +9,6 @@ cull_mode = 1
 polygon = PoolVector2Array( -165, -248, -98, -221, -51, -166, -4, -147, 46, -188, 74, -230, 148, -228, 199, -169, 197, -109, 208, -48, 249, 36, 256, 122, 181, 177, 103, 231, 38, 248, -22, 225, -99, 200, -168, 137, -255, 16, -256, -92, -242, -203 )
 
 [node name="asteroid" type="RigidBody2D"]
-can_sleep = false
 script = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="."]

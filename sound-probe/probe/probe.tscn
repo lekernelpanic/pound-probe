@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://probe/probe.gd" type="Script" id=1]
 [ext_resource path="res://probe/probe.png" type="Texture" id=2]
 [ext_resource path="res://probe/light.png" type="Texture" id=3]
 [ext_resource path="res://probe/thrusters/thrusters.tscn" type="PackedScene" id=4]
+[ext_resource path="res://probe/collision.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
 
 [node name="probe" type="RigidBody2D"]
+contacts_reported = 1
+contact_monitor = true
 can_sleep = false
 angular_damp = 0.0
 script = ExtResource( 1 )
@@ -35,3 +38,8 @@ shadow_filter_smooth = 4.0
 [node name="camera" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
+
+[node name="collision" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="body_entered" from="." to="." method="_on_probe_body_entered"]

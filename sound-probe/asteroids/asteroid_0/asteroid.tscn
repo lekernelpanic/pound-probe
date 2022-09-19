@@ -20,3 +20,5 @@ polygon = PoolVector2Array( -139, -255, -51, -230, 98, -128, 143, -56, 204, 22, 
 
 [node name="light_occluder" type="LightOccluder2D" parent="."]
 occluder = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_asteroid_body_entered"]

@@ -29,3 +29,10 @@ func _process(delta):
 	
 	if linear_velocity.length() > MAX_SPEED + 1:
 		linear_velocity = linear_velocity.normalized() * MAX_SPEED
+
+func _on_probe_body_entered(body):
+	if !$collision.playing:
+		var collision_force = (linear_velocity - body.linear_velocity).length()
+		$collision.volume_db = min(collision_force / 20, 10)
+		$collision.play()
+		print($collision.volume_db)
