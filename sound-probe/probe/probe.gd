@@ -6,6 +6,7 @@ var UNZOOM_SCALE = 128
 var ZOOM_SMOOTHNESS = 0.005
 var MIN_ZOOM = 1.5
 var MAX_ZOOM = 3
+var MIN_COLLISION_DB = 10
 
 var zoom = 0.5
 
@@ -33,6 +34,5 @@ func _process(delta):
 func _on_probe_body_entered(body):
 	if !$collision.playing:
 		var collision_force = (linear_velocity - body.linear_velocity).length()
-		$collision.volume_db = min(collision_force / 20, 10)
+		$collision.volume_db = min(collision_force / 20, MIN_COLLISION_DB) - MIN_COLLISION_DB
 		$collision.play()
-		print($collision.volume_db)
