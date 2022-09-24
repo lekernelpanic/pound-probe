@@ -1,13 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://probe/probe.tscn" type="PackedScene" id=1]
+[ext_resource path="res://compass/compass.tscn" type="PackedScene" id=2]
 [ext_resource path="res://asteroids/asteroids.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stars/stars.tscn" type="PackedScene" id=4]
 
 [node name="main" type="Node2D"]
 
-[node name="canvas_modulate" type="CanvasModulate" parent="."]
-color = Color( 0.25098, 0.25098, 0.25098, 1 )
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="center_container" type="CenterContainer" parent="ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="compass" parent="ui/center_container" instance=ExtResource( 2 )]
+modulate = Color( 0.501961, 0, 0, 1 )
+origin = NodePath("../../../probe")
+destination = NodePath("../../../probe")
 
 [node name="parallax_background" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
@@ -17,6 +32,9 @@ motion_scale = Vector2( 0.2, 0.2 )
 motion_mirroring = Vector2( 20000, 20000 )
 
 [node name="stars" parent="parallax_background/parallax_layer" instance=ExtResource( 4 )]
+
+[node name="canvas_modulate" type="CanvasModulate" parent="."]
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
 
 [node name="asteroids" parent="." instance=ExtResource( 3 )]
 
