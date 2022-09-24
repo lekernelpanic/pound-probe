@@ -34,7 +34,7 @@ motion_mirroring = Vector2( 20000, 20000 )
 [node name="stars" parent="parallax_background/parallax_layer" instance=ExtResource( 4 )]
 
 [node name="canvas_modulate" type="CanvasModulate" parent="."]
-color = Color( 0.25098, 0.25098, 0.25098, 1 )
+color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 
 [node name="asteroids" parent="." instance=ExtResource( 3 )]
 
