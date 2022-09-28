@@ -2,6 +2,7 @@ extends Node2D
 
 var OCURENCES = 512
 var MAX_DISTANCE = 20000
+var DISTANCE_OFFSET = 1000
 var MIN_SCALE = 0.2
 var MAX_SCALE = 2
 var MAX_LINEAR_VELOCITY = 100
@@ -24,7 +25,7 @@ func _generate_asteroid():
 	var asteroid_index = random.randi_range(0, asteroid_scenes.size() - 1)
 	var asteroid = asteroid_scenes[asteroid_index].instance();
 	
-	var distance = sqrt(random.randf_range(0, pow(MAX_DISTANCE, 2)))
+	var distance = sqrt(random.randf_range(0, pow(MAX_DISTANCE, 2))) + DISTANCE_OFFSET
 	var angle = random.randf_range(0, 2 * PI)
 	asteroid.position = Vector2(distance * cos(angle), distance * sin(angle))
 	
