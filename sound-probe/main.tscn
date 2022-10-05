@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://probe/probe.tscn" type="PackedScene" id=1]
 [ext_resource path="res://compass/compass.tscn" type="PackedScene" id=2]
 [ext_resource path="res://asteroids/asteroids.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stars/stars.tscn" type="PackedScene" id=4]
+[ext_resource path="res://jupiter/jupiter.tscn" type="PackedScene" id=5]
 
 [node name="main" type="Node2D"]
 
@@ -22,19 +23,26 @@ margin_bottom = 20.0
 [node name="compass" parent="ui/center_container" instance=ExtResource( 2 )]
 modulate = Color( 0.501961, 0, 0, 1 )
 origin = NodePath("../../../probe")
-destination = NodePath("../../../probe")
+destination = NodePath("../../../parallax_background/destination/jupiter")
+destination_parallax_scale = 0.25
 
 [node name="parallax_background" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
 
-[node name="parallax_layer" type="ParallaxLayer" parent="parallax_background"]
+[node name="deep_sky" type="ParallaxLayer" parent="parallax_background"]
 motion_scale = Vector2( 0.2, 0.2 )
 motion_mirroring = Vector2( 20000, 20000 )
 
-[node name="stars" parent="parallax_background/parallax_layer" instance=ExtResource( 4 )]
+[node name="stars" parent="parallax_background/deep_sky" instance=ExtResource( 4 )]
+
+[node name="destination" type="ParallaxLayer" parent="parallax_background"]
+motion_scale = Vector2( 0.25, 0.25 )
+
+[node name="jupiter" parent="parallax_background/destination" instance=ExtResource( 5 )]
+position = Vector2( 2600, -1300 )
 
 [node name="canvas_modulate" type="CanvasModulate" parent="."]
-color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="asteroids" parent="." instance=ExtResource( 3 )]
 
