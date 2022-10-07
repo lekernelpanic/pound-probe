@@ -7,3 +7,4 @@ func _ready():
 	$sprite.scale = scale_vector
 	$collision_polygon.scale = scale_vector
 	$light_occluder.scale = scale_vector
+	mass = applied_scale
