@@ -1,18 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://jupiter/jupiter.png" type="Texture" id=1]
-[ext_resource path="res://jupiter/light.png" type="Texture" id=2]
+[ext_resource path="res://jupiter/jupiter.gd" type="Script" id=2]
+[ext_resource path="res://jupiter/juno_waves_perijove_4.ogg" type="AudioStream" id=3]
 
-[sub_resource type="CanvasItemMaterial" id=1]
-light_mode = 1
+[node name="jupiter" type="Position2D"]
+script = ExtResource( 2 )
 
-[node name="sprite" type="Sprite"]
-material = SubResource( 1 )
-texture = ExtResource( 1 )
-
-[node name="light" type="Light2D" parent="."]
-scale = Vector2( 1, 1 )
-texture = ExtResource( 2 )
-texture_scale = 42.0
-color = Color( 0.756863, 0.490196, 0.380392, 1 )
-mode = 2
+[node name="audio_streamp_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+max_distance = 32000.0
+attenuation = 4.0
