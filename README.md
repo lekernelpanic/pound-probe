@@ -16,10 +16,16 @@ This project is distributed under the terms of the GNU general public license.
 
 Assets are distributed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <3.
 
-### Exception for the space sounds
+### Exceptions
+
+#### Space audio
 
 Original space audio recordings provided courtesy of NASA and The University of Iowa. [https://space-audio.org/](https://space-audio.org/)
 
 Attribution 3.0 Unported (CC BY 3.0)
 
 - [juno_waves_perijove_4.ogg](https://space.physics.uiowa.edu/plasma-wave/juno/audio/)
+
+#### Noto Sans
+
+[Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) is licensed under the Open Font License.

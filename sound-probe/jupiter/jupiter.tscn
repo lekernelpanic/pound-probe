@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://jupiter/description/description.tscn" type="PackedScene" id=1]
 [ext_resource path="res://jupiter/jupiter.gd" type="Script" id=2]
 [ext_resource path="res://jupiter/juno_waves_perijove_4.ogg" type="AudioStream" id=3]
 
-[node name="jupiter" type="Position2D"]
+[sub_resource type="CircleShape2D" id=1]
+radius = 5000.0
+
+[node name="jupiter" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="audio_streamp_player" type="AudioStreamPlayer2D" parent="."]
@@ -11,3 +15,11 @@ stream = ExtResource( 3 )
 autoplay = true
 max_distance = 32000.0
 attenuation = 4.0
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="description" parent="." instance=ExtResource( 1 )]
+
+[connection signal="body_entered" from="." to="." method="_on_jupiter_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_jupiter_body_exited"]

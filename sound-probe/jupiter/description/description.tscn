@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://jupiter/description/description.gd" type="Script" id=1]
+[ext_resource path="res://jupiter/description/noto_sans_regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 512
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 42
+font_data = ExtResource( 2 )
+
+[node name="description" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="margin_container" type="MarginContainer" parent="panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = -1500.0
+margin_bottom = -64.0
+
+[node name="v_box_container" type="VBoxContainer" parent="panel/margin_container"]
+margin_right = 2276.0
+margin_bottom = 2032.0
+
+[node name="title" type="Label" parent="panel/margin_container/v_box_container"]
+margin_right = 2276.0
+margin_bottom = 699.0
+size_flags_stretch_ratio = 0.3
+custom_fonts/font = SubResource( 7 )
+text = "Jupiter"
+
+[node name="text" type="RichTextLabel" parent="panel/margin_container/v_box_container"]
+margin_top = 703.0
+margin_right = 2276.0
+margin_bottom = 2032.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[fill]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis urna elit, scelerisque placerat augue gravida vitae. Aenean quis consequat lectus. Quisque vitae sagittis tellus. Aliquam risus tortor, mattis eget rhoncus ac, mollis nec nunc. Praesent mi velit, condimentum vitae luctus nec, finibus et est. Phasellus a bibendum lacus. Vivamus facilisis tempor urna, et rhoncus quam molestie sed. Aenean tincidunt tincidunt erat vel fermentum. Suspendisse potenti.
+[/fill]
+
+[fill]
+Donec sit amet arcu diam. Vestibulum dapibus accumsan sapien, nec molestie felis molestie vel. Integer scelerisque velit in dapibus placerat. Morbi eu fringilla nisi. Cras a sem enim. Sed viverra rutrum risus, ut aliquam nisi tristique ac. Donec ornare malesuada sem, feugiat rutrum neque sollicitudin ut. In laoreet tempus lacinia. Morbi fermentum elit ut nulla condimentum elementum. Ut aliquam elit a turpis viverra pretium. Praesent tempus mauris massa, a pellentesque ligula sagittis vel.
+[/fill]"
+text = "
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis urna elit, scelerisque placerat augue gravida vitae. Aenean quis consequat lectus. Quisque vitae sagittis tellus. Aliquam risus tortor, mattis eget rhoncus ac, mollis nec nunc. Praesent mi velit, condimentum vitae luctus nec, finibus et est. Phasellus a bibendum lacus. Vivamus facilisis tempor urna, et rhoncus quam molestie sed. Aenean tincidunt tincidunt erat vel fermentum. Suspendisse potenti.
+
+
+
+Donec sit amet arcu diam. Vestibulum dapibus accumsan sapien, nec molestie felis molestie vel. Integer scelerisque velit in dapibus placerat. Morbi eu fringilla nisi. Cras a sem enim. Sed viverra rutrum risus, ut aliquam nisi tristique ac. Donec ornare malesuada sem, feugiat rutrum neque sollicitudin ut. In laoreet tempus lacinia. Morbi fermentum elit ut nulla condimentum elementum. Ut aliquam elit a turpis viverra pretium. Praesent tempus mauris massa, a pellentesque ligula sagittis vel.
+"

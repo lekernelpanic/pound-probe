@@ -9,7 +9,7 @@
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
 
-[node name="probe" type="RigidBody2D"]
+[node name="probe" type="RigidBody2D" groups=["probe"]]
 contacts_reported = 1
 contact_monitor = true
 can_sleep = false
