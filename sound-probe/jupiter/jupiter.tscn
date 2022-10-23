@@ -15,6 +15,7 @@ stream = ExtResource( 3 )
 autoplay = true
 max_distance = 32000.0
 attenuation = 4.0
+bus = "space_sound"
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

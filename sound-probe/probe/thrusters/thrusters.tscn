@@ -11,6 +11,7 @@ script = ExtResource( 4 )
 [node name="audio_stream_player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 volume_db = -16.0
+bus = "sound_effect"
 
 [node name="particles" type="Node2D" parent="."]
 

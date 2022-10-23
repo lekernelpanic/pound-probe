@@ -41,5 +41,6 @@ smoothing_enabled = true
 
 [node name="collision" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+bus = "sound_effect"
 
 [connection signal="body_entered" from="." to="." method="_on_probe_body_entered"]
