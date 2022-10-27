@@ -1,11 +1,13 @@
 extends CanvasLayer
+# Manage the apparition of the description and placement of the visualizer
+
+
+const ALPHA = 0.4
 
 export var appear = false
 
-var ALPHA = 0.4
 
 func _process(delta):
-	
 	if appear:
 		visible = true
 		$panel.modulate.a = clamp($panel.modulate.a + delta, 0, ALPHA)
