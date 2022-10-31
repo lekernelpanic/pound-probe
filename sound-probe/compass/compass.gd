@@ -9,7 +9,7 @@ const VANISHED_DISTANCE = 6_000
 
 export(NodePath) var origin
 export(NodePath) var destination
-export var destination_parallax_scale = 1.0
+export(float) var destination_parallax_scale = 1.0
 
 var _origin_node
 var _destination_node

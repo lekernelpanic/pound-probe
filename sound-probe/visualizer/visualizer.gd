@@ -12,7 +12,7 @@ const ACCELERATION = 4
 const BAR_WIDTH = 8
 const BAR_TRANSPARENCY_MULTIPLIER = 4
 
-export var size = Vector2() setget set_size
+export(Vector2) var size setget set_size
 
 var _spectrum
 var _frequency_interval

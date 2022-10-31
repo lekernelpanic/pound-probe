@@ -2,7 +2,7 @@ extends RigidBody2D
 # Alltrows to set size during runtime.
 
 
-export var applied_scale = 1 setget set_applied_scale
+export(float) var applied_scale = 1.0 setget set_applied_scale
 
 
 func set_applied_scale(new_applied_scale):

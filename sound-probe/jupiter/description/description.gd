@@ -4,7 +4,7 @@ extends CanvasLayer
 
 const ALPHA = 0.4
 
-export var appear = false
+export(bool) var appear
 
 
 func _process(delta):
