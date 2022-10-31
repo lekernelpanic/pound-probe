@@ -1,4 +1,6 @@
 extends Node2D
+# Particles and sound of thrusters.
+
 
 func _process(_delta):
 	var thrusters = false
