@@ -2,13 +2,13 @@ extends Node2D
 # Generate the asteroids.
 
 
-var OCURENCES = 512
-var MAX_DISTANCE = 20_000
-var DISTANCE_OFFSET = 1_000
-var MIN_SCALE = 0.2
-var MAX_SCALE = 2
-var MAX_LINEAR_VELOCITY = 100
-var MAX_ANGULAR_VELOCITY = 0.2
+const OCURENCES = 512
+const MAX_DISTANCE = 20_000
+const DISTANCE_OFFSET = 1_000
+const MIN_SCALE = 0.2
+const MAX_SCALE = 2
+const MAX_LINEAR_VELOCITY = 100
+const MAX_ANGULAR_VELOCITY = 0.2
 
 var _asteroid_scenes
 var _random
