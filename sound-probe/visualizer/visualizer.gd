@@ -25,7 +25,7 @@ func _init():
 	for _i in range(DEFINITION):
 		_histogram.append(0)
 	
-	_frequency_interval = (MAX_FREQUENCY - MIN_FREQUENCY) / DEFINITION
+	_frequency_interval = (float(MAX_FREQUENCY) - MIN_FREQUENCY) / DEFINITION
 	set_size(size)
 
 
