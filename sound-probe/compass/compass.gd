@@ -1,5 +1,5 @@
 extends Node2D
-# Applies the rotation from the origin to destination
+# Applies the rotation from the origin to destination.
 
 
 const MAX_DISTANCE = 40_000

@@ -1,6 +1,6 @@
 extends Node2D
-# Generate the asteroids
-# Position, size and velocity applied randomly
+# Generate the asteroids.
+
 
 var OCURENCES = 512
 var MAX_DISTANCE = 20_000
@@ -12,6 +12,7 @@ var MAX_ANGULAR_VELOCITY = 0.2
 
 var _asteroid_scenes
 var _random
+
 
 func _init():
 	_random = RandomNumberGenerator.new()

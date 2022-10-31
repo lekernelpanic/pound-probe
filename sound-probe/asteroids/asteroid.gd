@@ -1,5 +1,5 @@
 extends RigidBody2D
-# Alltrows to set size during runtime
+# Alltrows to set size during runtime.
 
 
 export var applied_scale = 1 setget set_applied_scale

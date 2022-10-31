@@ -1,5 +1,5 @@
 extends RigidBody2D
-# Probe movements and collision sound
+# Probe movements and collision sound.
 
 
 const POWER = 60

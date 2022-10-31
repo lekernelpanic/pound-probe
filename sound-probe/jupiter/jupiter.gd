@@ -1,5 +1,5 @@
 extends Area2D
-# Puts the sprite in the parallax layer and detects probe's entrance
+# Puts the sprite in the parallax layer and detects probe's entrance.
 
 
 export(PackedScene) var sprite

@@ -1,5 +1,5 @@
 extends CanvasLayer
-# Manage the apparition of the description and placement of the visualizer
+# Manage the apparition of the description and placement of the visualizer.
 
 
 const ALPHA = 0.4

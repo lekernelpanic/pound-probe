@@ -1,5 +1,5 @@
 extends Node2D
-# Analyze an audio bus and draw the visualizer
+# Analyze an audio bus and draw the visualizer.
 
 
 const AUDIO_BUS_NAME = "space_sound"
