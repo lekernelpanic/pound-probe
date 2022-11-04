@@ -24,7 +24,7 @@ Original space audio recordings provided courtesy of NASA and The University of 
 
 Attribution 3.0 Unported (CC BY 3.0)
 
-- [juno_waves_perijove_4.ogg](https://space.physics.uiowa.edu/plasma-wave/juno/audio/)
+- [juno_waves_perijove_4.ogg](https://space.physics.uiowa.edu/plasma-wave/juno/audio/201702/jno-PJ4-nearEQ-plasmafreq-17-033-1246-1250-blk.html)
 
 #### Noto Sans
 
