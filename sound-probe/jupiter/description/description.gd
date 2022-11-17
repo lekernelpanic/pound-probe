@@ -2,7 +2,7 @@ extends CanvasLayer
 # Manage the apparition of the description and placement of the visualizer.
 
 
-const ALPHA = 0.4
+const ALPHA = 0.5
 
 export(bool) var appear
 
