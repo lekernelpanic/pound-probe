@@ -44,7 +44,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="asteroids" parent="." instance=ExtResource( 3 )]
 
 [node name="jupiter" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1040, -556 )
+position = Vector2( 13612, -5477 )
 sprite = ExtResource( 6 )
 parallax_layer = NodePath("../parallax_background/destination")
 

@@ -1,13 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://probe/probe.gd" type="Script" id=1]
 [ext_resource path="res://probe/probe.png" type="Texture" id=2]
 [ext_resource path="res://probe/light.png" type="Texture" id=3]
 [ext_resource path="res://probe/thrusters/thrusters.tscn" type="PackedScene" id=4]
 [ext_resource path="res://probe/collision.ogg" type="AudioStream" id=5]
+[ext_resource path="res://probe/appear.tres" type="Shader" id=6]
+[ext_resource path="res://probe/juno.png" type="Texture" id=7]
 
-[sub_resource type="CanvasItemMaterial" id=1]
-light_mode = 1
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+shader_param/apparition = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 6 )
+shader_param/apparition = 0.0
 
 [node name="probe" type="RigidBody2D" groups=["probe"]]
 contacts_reported = 1
@@ -17,15 +24,6 @@ angular_damp = 0.0
 script = ExtResource( 1 )
 
 [node name="thrusters" parent="." instance=ExtResource( 4 )]
-
-[node name="sprite" type="Sprite" parent="."]
-material = SubResource( 1 )
-position = Vector2( 42, 100 )
-texture = ExtResource( 2 )
-
-[node name="collision_polygon" type="CollisionPolygon2D" parent="."]
-position = Vector2( 42, 100 )
-polygon = PoolVector2Array( -51, -256, -39, -250, -25, -256, -18, -249, -10, -240, -13, -222, -21, -220, -31, -223, -39, -222, -47, -215, -42, -200, -37, -191, -21, -176, -17, -155, -19, -135, 7, -110, -4, -104, 4, -92, 13, -72, -3, -74, -11, -62, -17, -51, 192, 78, 191, 80, -33, -58, -45, -55, -38, -37, -30, -22, -14, -1, -26, 28, -35, 21, -42, -22, -51, -38, -54, -40, -118, 256, -122, 255, -57, -42, -66, -49, -187, 57, -192, 50, -69, -57, -62, -68, -78, -63, -102, -59, -124, -65, -137, -90, -135, -112, -127, -137, -112, -159, -94, -177, -70, -191, -68, -208, -66, -226, -62, -240 )
 
 [node name="light" type="Light2D" parent="."]
 texture = ExtResource( 3 )
@@ -42,5 +40,21 @@ smoothing_enabled = true
 [node name="collision" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 bus = "sound_effect"
+
+[node name="voyager_1" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -51, -256, -39, -250, -25, -256, -18, -249, -10, -240, -13, -222, -21, -220, -31, -223, -39, -222, -47, -215, -42, -200, -37, -191, -21, -176, -17, -155, -19, -135, 7, -110, -4, -104, 4, -92, 13, -72, -3, -74, -11, -62, -17, -51, 192, 78, 191, 80, -33, -58, -45, -55, -38, -37, -30, -22, -14, -1, -26, 28, -35, 21, -42, -22, -51, -38, -54, -40, -118, 256, -122, 255, -57, -42, -66, -49, -187, 57, -192, 50, -69, -57, -62, -68, -78, -63, -102, -59, -124, -65, -137, -90, -135, -112, -127, -137, -112, -159, -94, -177, -70, -191, -68, -208, -66, -226, -62, -240 )
+disabled = true
+
+[node name="sprite" type="Sprite" parent="voyager_1"]
+material = SubResource( 1 )
+texture = ExtResource( 2 )
+
+[node name="juno" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 1, -251, 26, -250, 45, -247, 67, -240, 64, -221, 59, -199, 56, -182, 56, -172, 52, -158, 50, -142, 46, -128, 46, -110, 43, -91, 35, -80, 35, -73, 32, -59, 30, -44, 28, -31, 21, -31, 27, -23, 34, -5, 37, 9, 43, 5, 60, 19, 72, 29, 80, 37, 84, 34, 94, 42, 110, 54, 121, 64, 124, 67, 138, 78, 150, 87, 161, 97, 153, 105, 165, 113, 177, 127, 190, 133, 192, 145, 200, 155, 209, 167, 217, 176, 223, 190, 202, 182, 186, 176, 174, 167, 160, 167, 154, 157, 140, 151, 127, 141, 120, 149, 110, 140, 96, 129, 83, 118, 79, 115, 73, 110, 64, 102, 56, 96, 43, 87, 43, 81, 38, 75, 29, 68, 18, 59, 6, 50, 9, 43, -4, 42, -19, 40, -30, 40, -34, 38, -32, 44, -52, 50, -57, 52, -77, 60, -78, 65, -86, 67, -102, 73, -124, 82, -127, 83, -135, 86, -151, 92, -168, 99, -173, 99, -184, 105, -207, 113, -232, 123, -243, 95, -255, 61, -229, 53, -206, 43, -197, 40, -192, 37, -173, 32, -159, 26, -150, 21, -145, 19, -133, 15, -114, 8, -102, 3, -98, 7, -86, 1, -68, -5, -55, -11, -47, -8, -35, -26, -28, -31, -29, -40, -27, -49, -25, -60, -25, -67, -23, -74, -21, -91, -21, -108, -19, -125, -17, -139, -15, -152, -11, -172, -8, -191, -4, -213, -2, -234 )
+disabled = true
+
+[node name="sprite" type="Sprite" parent="juno"]
+material = SubResource( 2 )
+texture = ExtResource( 7 )
 
 [connection signal="body_entered" from="." to="." method="_on_probe_body_entered"]

@@ -16,6 +16,7 @@ func _ready():
 func _on_jupiter_body_entered(body):
 	if(body.is_in_group("probe")):
 		$description.appear = true
+		body.probe = "juno"
 
 
 func _on_jupiter_body_exited(body):
