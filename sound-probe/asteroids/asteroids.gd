@@ -5,8 +5,8 @@ extends Node2D
 const OCURENCES = 512
 const MAX_DISTANCE = 20_000
 const DISTANCE_OFFSET = 1_000
-const MIN_SCALE = 0.2
-const MAX_SCALE = 2
+const MIN_SCALE = 0.1
+const MAX_SCALE = 1
 const MAX_LINEAR_VELOCITY = 100
 const MAX_ANGULAR_VELOCITY = 0.2
 

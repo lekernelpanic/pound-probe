@@ -2,11 +2,9 @@ extends RigidBody2D
 # Probe movements and collision sound.
 
 
-const POWER = 60
+const POWER = 30
 const INITIAL_ZOOM = 0.5
-const UNZOOM_SCALE = 128
 const ZOOM_SMOOTHNESS = 0.005
-const NORMAL_ZOOM = 2
 const MIN_COLLISION_DB = 10
 const APPARITION_SPEED = 2
 
@@ -29,6 +27,9 @@ func _ready():
 
 
 func _process(delta):
+	_zoom = lerp(_zoom, 1, ZOOM_SMOOTHNESS)
+	$camera.zoom = Vector2(_zoom, _zoom)
+	
 	var power = delta * POWER
 	
 	$thrusters.rotation = -rotation
@@ -41,9 +42,6 @@ func _process(delta):
 		apply_impulse(Vector2 (), Vector2(0, -power))
 	if Input.is_action_pressed("down"):
 		apply_impulse(Vector2 (), Vector2(0, power))
-	
-	_zoom = lerp(_zoom, NORMAL_ZOOM, ZOOM_SMOOTHNESS)
-	$camera.zoom = Vector2(_zoom, _zoom)
 	
 	for probe_name in _probes:
 		var probe_material = _probes[probe_name].get_child(0).material

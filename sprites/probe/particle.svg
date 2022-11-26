@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="4mm"
-   height="4mm"
-   viewBox="0 0 4 4"
+   width="2mm"
+   height="2mm"
+   viewBox="0 0 2 2"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
@@ -31,8 +31,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="44.58541"
-     inkscape:cx="4.6764177"
-     inkscape:cy="7.7155286"
+     inkscape:cx="4.0932673"
+     inkscape:cy="7.7155285"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -67,18 +67,19 @@
        fy="25.75934"
        r="21.60236"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.09258248,0,0,0.09258248,-0.43815622,-0.38486356)" />
+       gradientTransform="matrix(0.04629124,0,0,0.04629124,-0.21907812,-0.19243178)" />
   </defs>
   <g
      inkscape:label="particle"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     sodipodi:insensitive="true">
     <circle
-       style="fill:url(#radialGradient1128);fill-opacity:1;stroke:none;stroke-width:0.0925825"
+       style="fill:url(#radialGradient1128);fill-opacity:1;stroke:none;stroke-width:0.0462912"
        id="path435"
-       cx="2"
-       cy="2"
-       r="2" />
+       cx="1"
+       cy="1"
+       r="1" />
   </g>
   <metadata
      id="metadata358">
