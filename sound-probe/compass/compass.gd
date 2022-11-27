@@ -9,7 +9,6 @@ const VANISHED_DISTANCE = 6_000
 
 export(NodePath) var origin
 export(NodePath) var destination
-export(float) var destination_parallax_scale = 1.0
 
 var _origin_node
 var _destination_node
@@ -23,7 +22,6 @@ func _ready():
 func _process(_delta):
 	var origin_position = _origin_node.global_position
 	var destination_position =  _destination_node.position
-	destination_position /= destination_parallax_scale
 	var distance = origin_position.distance_to(destination_position)
 
 	if distance > VANISH_DISTANCE:

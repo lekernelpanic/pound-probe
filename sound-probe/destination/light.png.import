@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-31e9d04c8363437870dbaa5a48c1918f.stex"
+path="res://.import/light.png-bab6de1cf8825efb0ea72f5f5e8b88f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://destination/jupiter/light.png"
-dest_files=[ "res://.import/light.png-31e9d04c8363437870dbaa5a48c1918f.stex" ]
+source_file="res://destination/light.png"
+dest_files=[ "res://.import/light.png-bab6de1cf8825efb0ea72f5f5e8b88f4.stex" ]
 
 [params]
 

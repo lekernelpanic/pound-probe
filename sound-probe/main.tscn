@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://probe/probe.tscn" type="PackedScene" id=1]
 [ext_resource path="res://compass/compass.tscn" type="PackedScene" id=2]
 [ext_resource path="res://asteroids/asteroids.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stars/stars.tscn" type="PackedScene" id=4]
 [ext_resource path="res://destination/destination.tscn" type="PackedScene" id=5]
-[ext_resource path="res://destination/jupiter/sprite.tscn" type="PackedScene" id=6]
+[ext_resource path="res://destination/jupiter/jupiter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://destination/jupiter/juno_waves_perijove_4.ogg" type="AudioStream" id=7]
+[ext_resource path="res://destination/interstellar_space/interstellar_space.tscn" type="PackedScene" id=8]
+[ext_resource path="res://destination/interstellar_space/voyager_1_pws.ogg" type="AudioStream" id=9]
 
 [node name="main" type="Node2D"]
 
@@ -22,10 +24,15 @@ margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
 
-[node name="compass" parent="ui/center_container" instance=ExtResource( 2 )]
-modulate = Color( 0.501961, 0, 0, 1 )
+[node name="compass_jupiter" parent="ui/center_container" instance=ExtResource( 2 )]
+modulate = Color( 0.756863, 0.490196, 0.380392, 1 )
 origin = NodePath("../../../probe")
 destination = NodePath("../../../jupiter")
+
+[node name="compass_interstellar_space" parent="ui/center_container" instance=ExtResource( 2 )]
+modulate = Color( 0.372549, 0.282353, 0.454902, 1 )
+origin = NodePath("../../../probe")
+destination = NodePath("../../../interstellar_space")
 
 [node name="parallax_background" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
@@ -45,12 +52,20 @@ color = Color( 0, 0, 0, 1 )
 [node name="asteroids" parent="." instance=ExtResource( 3 )]
 
 [node name="jupiter" parent="." instance=ExtResource( 5 )]
-position = Vector2( 11906, -5177 )
+position = Vector2( 22431, -10242 )
 sprite = ExtResource( 6 )
 parallax_layer = NodePath("../parallax_background/destination")
 probe = "juno"
 title = "jupiter_title"
 text = "jupiter_text"
 audio = ExtResource( 7 )
+
+[node name="interstellar_space" parent="." instance=ExtResource( 5 )]
+position = Vector2( -11905, 12151 )
+sprite = ExtResource( 8 )
+parallax_layer = NodePath("../parallax_background/destination")
+probe = "voyager_1"
+title = "Interstellar space"
+audio = ExtResource( 9 )
 
 [node name="probe" parent="." instance=ExtResource( 1 )]
