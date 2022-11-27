@@ -14,7 +14,7 @@ shader_param/apparition = 0.0
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 6 )
-shader_param/apparition = 0.156
+shader_param/apparition = 0.0
 
 [node name="probe" type="RigidBody2D" groups=["probe"]]
 contacts_reported = 1

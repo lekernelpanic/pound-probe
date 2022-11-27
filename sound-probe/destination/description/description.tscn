@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://jupiter/description/description.gd" type="Script" id=1]
-[ext_resource path="res://jupiter/description/noto_sans_regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://visualizer/visualizer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://destination/description/description.gd" type="Script" id=1]
+[ext_resource path="res://destination/description/noto_sans_regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://destination/description/visualizer/visualizer.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
@@ -36,24 +36,22 @@ margin_right = -2413.0
 margin_bottom = -64.0
 
 [node name="v_box_container" type="VBoxContainer" parent="panel/margin_container"]
-margin_right = 2132.0
+margin_right = 1363.0
 margin_bottom = 2032.0
 
 [node name="title" type="Label" parent="panel/margin_container/v_box_container"]
 modulate = Color( 1, 1, 1, 0.501961 )
-margin_right = 2132.0
+margin_right = 1363.0
 margin_bottom = 546.0
 size_flags_vertical = 2
 custom_fonts/font = SubResource( 7 )
-text = "jupiter_title"
 align = 3
 
 [node name="text" type="Label" parent="panel/margin_container/v_box_container"]
 margin_top = 680.0
-margin_right = 2132.0
+margin_right = 1363.0
 margin_bottom = 738.0
 size_flags_vertical = 2
 size_flags_stretch_ratio = 2.0
 custom_fonts/font = SubResource( 8 )
-text = "jupiter_description"
 autowrap = true

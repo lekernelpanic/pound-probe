@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://jupiter/light.png" type="Texture" id=1]
-[ext_resource path="res://jupiter/jupiter.png" type="Texture" id=2]
+[ext_resource path="res://destination/jupiter/light.png" type="Texture" id=1]
+[ext_resource path="res://destination/jupiter/jupiter.png" type="Texture" id=2]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
