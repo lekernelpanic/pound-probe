@@ -8,7 +8,7 @@
 bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 400
+size = 256
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
@@ -42,7 +42,7 @@ margin_bottom = 2032.0
 [node name="title" type="Label" parent="panel/margin_container/v_box_container"]
 modulate = Color( 1, 1, 1, 0.501961 )
 margin_right = 1363.0
-margin_bottom = 546.0
+margin_bottom = 350.0
 size_flags_vertical = 2
 custom_fonts/font = SubResource( 7 )
 align = 3

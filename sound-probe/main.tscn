@@ -61,11 +61,12 @@ text = "jupiter_text"
 audio = ExtResource( 7 )
 
 [node name="interstellar_space" parent="." instance=ExtResource( 5 )]
-position = Vector2( -11905, 12151 )
+position = Vector2( -11481, 12565 )
 sprite = ExtResource( 8 )
 parallax_layer = NodePath("../parallax_background/destination")
 probe = "voyager_1"
-title = "Interstellar space"
+title = "interstellar_space_title"
+text = "interstellar_space_text"
 audio = ExtResource( 9 )
 
 [node name="probe" parent="." instance=ExtResource( 1 )]
