@@ -2,6 +2,9 @@ extends Node2D
 # Particles and sound of thrusters.
 
 
+export(bool) var activated = true
+
+
 func _process(_delta):
 	var thrusters = false
 	
@@ -10,18 +13,19 @@ func _process(_delta):
 	$particles/up.emitting = false
 	$particles/down.emitting = false
 	
-	if Input.is_action_pressed("left"):
-		$particles/right.emitting = true
-		thrusters = true
-	if Input.is_action_pressed("right"):
-		$particles/left.emitting = true
-		thrusters = true
-	if Input.is_action_pressed("up"):
-		$particles/down.emitting = true
-		thrusters = true
-	if Input.is_action_pressed("down"):
-		$particles/up.emitting = true
-		thrusters = true
+	if activated:
+		if Input.is_action_pressed("left"):
+			$particles/right.emitting = true
+			thrusters = true
+		if Input.is_action_pressed("right"):
+			$particles/left.emitting = true
+			thrusters = true
+		if Input.is_action_pressed("up"):
+			$particles/down.emitting = true
+			thrusters = true
+		if Input.is_action_pressed("down"):
+			$particles/up.emitting = true
+			thrusters = true
 	
 	if thrusters:
 		if !$audio_stream_player.playing:

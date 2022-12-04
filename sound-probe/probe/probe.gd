@@ -2,11 +2,12 @@ extends RigidBody2D
 # Probe movements and collision sound.
 
 
-const POWER = 30
+const POWER = 200
 const INITIAL_ZOOM = 0.5
 const ZOOM_SMOOTHNESS = 0.005
 const MIN_COLLISION_DB = 10
 const APPARITION_SPEED = 2
+const MINIMAL_COLLISION_FORCE = 200
 
 export(String, "voyager_1", "juno") var probe = "voyager_1" setget set_probe
 
@@ -34,14 +35,15 @@ func _process(delta):
 	
 	$thrusters.rotation = -rotation
 	
-	if Input.is_action_pressed("left"):
-		apply_impulse(Vector2 (), Vector2(-power, 0))
-	if Input.is_action_pressed("right"):
-		apply_impulse(Vector2 (), Vector2(power, 0))
-	if Input.is_action_pressed("up"):
-		apply_impulse(Vector2 (), Vector2(0, -power))
-	if Input.is_action_pressed("down"):
-		apply_impulse(Vector2 (), Vector2(0, power))
+	if($recover_timer.is_stopped()):
+		if Input.is_action_pressed("left"):
+			apply_impulse(Vector2 (), Vector2(-power, 0))
+		if Input.is_action_pressed("right"):
+			apply_impulse(Vector2 (), Vector2(power, 0))
+		if Input.is_action_pressed("up"):
+			apply_impulse(Vector2 (), Vector2(0, -power))
+		if Input.is_action_pressed("down"):
+			apply_impulse(Vector2 (), Vector2(0, power))
 	
 	for probe_name in _probes:
 		var probe_material = _probes[probe_name].get_child(0).material
@@ -65,8 +67,25 @@ func set_probe(new_probe):
 
 
 func _on_probe_body_entered(body):
-	if !$collision.playing:
-		var collision_force = (linear_velocity - body.linear_velocity).length()
-		$collision.volume_db = min(collision_force / 20, MIN_COLLISION_DB)
-		$collision.volume_db -= MIN_COLLISION_DB
-		$collision.play()
+	var collision_force = (linear_velocity - body.linear_velocity).length()
+	
+	if collision_force >= MINIMAL_COLLISION_FORCE:
+		if !$collision.playing:
+			$collision.volume_db = min(collision_force / 20, MIN_COLLISION_DB)
+			$collision.volume_db -= MIN_COLLISION_DB
+			$collision.play()
+		
+		$recover_timer.wait_time = collision_force / 100
+		$recover_timer.start()
+		activate_probe(false)
+
+
+func _on_recover_timer_timeout():
+	activate_probe(true)
+
+
+func activate_probe(activated):
+	$thrusters.activated = activated
+	$light.enabled = activated
+	for probe_name in _probes:
+		_probes[probe_name].get_child(0).material.set_shader_param("on", activated)
