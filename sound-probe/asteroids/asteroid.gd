@@ -11,4 +11,4 @@ func set_applied_scale(new_applied_scale):
 	$sprite.scale = scale_vector
 	$collision_polygon.scale = scale_vector
 	$light_occluder.scale = scale_vector
-	mass = applied_scale
+	mass = 4 / 3 * PI * pow(applied_scale, 3)
