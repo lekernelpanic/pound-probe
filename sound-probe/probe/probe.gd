@@ -69,12 +69,12 @@ func set_probe(new_probe):
 func _on_probe_body_entered(body):
 	var collision_force = (linear_velocity - body.linear_velocity).length()
 	
+	if !$collision.playing:
+		$collision.volume_db = min(collision_force / 20, MIN_COLLISION_DB)
+		$collision.volume_db -= MIN_COLLISION_DB
+		$collision.play()
+	
 	if collision_force >= MINIMAL_COLLISION_FORCE:
-		if !$collision.playing:
-			$collision.volume_db = min(collision_force / 20, MIN_COLLISION_DB)
-			$collision.volume_db -= MIN_COLLISION_DB
-			$collision.play()
-		
 		$recover_timer.wait_time = collision_force / 100
 		$recover_timer.start()
 		activate_probe(false)
