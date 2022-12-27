@@ -45,3 +45,38 @@ amount = 512
 lifetime = 0.2
 process_material = ExtResource( 1 )
 texture = ExtResource( 3 )
+
+[node name="rotation_left" type="Particles2D" parent="particles"]
+position = Vector2( -20, 0 )
+rotation = 1.5708
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
+
+[node name="rotation_right" type="Particles2D" parent="particles"]
+position = Vector2( 20, 0 )
+rotation = 4.71239
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
+
+[node name="rotation_up" type="Particles2D" parent="particles"]
+position = Vector2( 0, -20 )
+rotation = 3.14159
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
+
+[node name="rotation_down" type="Particles2D" parent="particles"]
+position = Vector2( 0, 20 )
+emitting = false
+amount = 512
+lifetime = 0.2
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
