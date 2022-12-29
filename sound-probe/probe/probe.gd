@@ -6,7 +6,6 @@ signal collision(force)
 
 const INITIAL_ZOOM = 0.5
 const ZOOM_SMOOTHNESS = 0.005
-const MIN_COLLISION_DB = 10
 const APPARITION_SPEED = 2
 const MINIMAL_COLLISION_FORCE = 200
 
@@ -58,11 +57,6 @@ func _on_probe_body_entered(body):
 
 
 func _on_probe_collision(force):
-	if !$collision.playing:
-		$collision.volume_db = min(force / 20, MIN_COLLISION_DB)
-		$collision.volume_db -= MIN_COLLISION_DB
-		$collision.play()
-	
 	if force >= MINIMAL_COLLISION_FORCE:
 		$recover_timer.wait_time = force / 100
 		$recover_timer.start()

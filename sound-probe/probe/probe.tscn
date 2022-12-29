@@ -4,7 +4,7 @@
 [ext_resource path="res://probe/voyager_1.png" type="Texture" id=2]
 [ext_resource path="res://probe/light.png" type="Texture" id=3]
 [ext_resource path="res://probe/thrusters/thrusters.tscn" type="PackedScene" id=4]
-[ext_resource path="res://probe/collision.ogg" type="AudioStream" id=5]
+[ext_resource path="res://probe/collision_sound/collision_sound.tscn" type="PackedScene" id=5]
 [ext_resource path="res://probe/appear.tres" type="Shader" id=6]
 [ext_resource path="res://probe/juno.png" type="Texture" id=7]
 [ext_resource path="res://probe/camera/camera.tscn" type="PackedScene" id=8]
@@ -26,6 +26,14 @@ can_sleep = false
 angular_damp = 0.0
 script = ExtResource( 1 )
 
+[node name="camera" parent="." instance=ExtResource( 8 )]
+
+[node name="recover_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="collision_sound" parent="." instance=ExtResource( 5 )]
+
 [node name="thrusters" parent="." instance=ExtResource( 4 )]
 
 [node name="light" type="Light2D" parent="."]
@@ -35,16 +43,6 @@ shadow_enabled = true
 shadow_gradient_length = 2.0
 shadow_filter = 5
 shadow_filter_smooth = 4.0
-
-[node name="camera" parent="." instance=ExtResource( 8 )]
-
-[node name="collision" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
-bus = "sound_effect"
-
-[node name="recover_timer" type="Timer" parent="."]
-wait_time = 4.0
-one_shot = true
 
 [node name="voyager_1" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -7, -97, 1, -94, 8, -97, 13, -93, 18, -87, 17, -76, 10, -75, 5, -77, 1, -77, -5, -72, -2, -64, 1, -58, 12, -48, 13, -35, 13, -24, 28, -9, 22, -5, 26, 2, 32, 14, 22, 14, 18, 21, 13, 26, 141, 105, 140, 107, 5, 23, -3, 24, 1, 35, 6, 44, 16, 57, 12, 70, 8, 76, 2, 70, 2, 63, 1, 57, -2, 45, -7, 36, -9, 34, -47, 213, -50, 212, -11, 33, -16, 28, -42, 52, -65, 71, -89, 93, -93, 88, -67, 66, -47, 49, -26, 30, -19, 24, -14, 17, -23, 20, -37, 22, -51, 18, -59, 4, -58, -11, -53, -25, -43, -39, -35, -48, -18, -58, -17, -69, -16, -79, -14, -87 )
@@ -65,4 +63,5 @@ texture = ExtResource( 7 )
 [connection signal="body_entered" from="." to="." method="_on_probe_body_entered"]
 [connection signal="collision" from="." to="." method="_on_probe_collision"]
 [connection signal="collision" from="." to="camera" method="_on_probe_collision"]
+[connection signal="collision" from="." to="collision_sound" method="_on_probe_collision"]
 [connection signal="timeout" from="recover_timer" to="." method="_on_recover_timer_timeout"]

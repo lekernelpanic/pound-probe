@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://probe/collision_sound/collision.ogg" type="AudioStream" id=1]
+[ext_resource path="res://probe/collision_sound/collision_sound.gd" type="Script" id=2]
+
+[node name="collision_sound" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+bus = "sound_effect"
+script = ExtResource( 2 )
