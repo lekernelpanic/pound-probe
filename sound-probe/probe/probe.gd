@@ -2,6 +2,8 @@ extends RigidBody2D
 # Probe movements and collision sound.
 
 
+signal collision(force)
+
 const INITIAL_ZOOM = 0.5
 const ZOOM_SMOOTHNESS = 0.005
 const MIN_COLLISION_DB = 10
@@ -19,7 +21,7 @@ func _init():
 
 
 func _ready():
-	_probes = {	
+	_probes = {
 		"voyager_1": $voyager_1,
 		"juno": $juno,
 	}
@@ -52,24 +54,26 @@ func set_probe(new_probe):
 
 
 func _on_probe_body_entered(body):
-	var collision_force = (linear_velocity - body.linear_velocity).length()
-	
+	emit_signal("collision", (linear_velocity - body.linear_velocity).length())
+
+
+func _on_probe_collision(force):
 	if !$collision.playing:
-		$collision.volume_db = min(collision_force / 20, MIN_COLLISION_DB)
+		$collision.volume_db = min(force / 20, MIN_COLLISION_DB)
 		$collision.volume_db -= MIN_COLLISION_DB
 		$collision.play()
 	
-	if collision_force >= MINIMAL_COLLISION_FORCE:
-		$recover_timer.wait_time = collision_force / 100
+	if force >= MINIMAL_COLLISION_FORCE:
+		$recover_timer.wait_time = force / 100
 		$recover_timer.start()
-		activate_probe(false)
+		_activate_probe(false)
 
 
 func _on_recover_timer_timeout():
-	activate_probe(true)
+	_activate_probe(true)
 
 
-func activate_probe(activated):
+func _activate_probe(activated):
 	$thrusters.activated = activated
 	$light.enabled = activated
 	for probe_name in _probes:

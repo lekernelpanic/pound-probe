@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://probe/probe.gd" type="Script" id=1]
 [ext_resource path="res://probe/voyager_1.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://probe/collision.ogg" type="AudioStream" id=5]
 [ext_resource path="res://probe/appear.tres" type="Shader" id=6]
 [ext_resource path="res://probe/juno.png" type="Texture" id=7]
+[ext_resource path="res://probe/camera/camera.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
@@ -35,9 +36,7 @@ shadow_gradient_length = 2.0
 shadow_filter = 5
 shadow_filter_smooth = 4.0
 
-[node name="camera" type="Camera2D" parent="."]
-current = true
-smoothing_enabled = true
+[node name="camera" parent="." instance=ExtResource( 8 )]
 
 [node name="collision" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
@@ -64,4 +63,6 @@ material = SubResource( 2 )
 texture = ExtResource( 7 )
 
 [connection signal="body_entered" from="." to="." method="_on_probe_body_entered"]
+[connection signal="collision" from="." to="." method="_on_probe_collision"]
+[connection signal="collision" from="." to="camera" method="_on_probe_collision"]
 [connection signal="timeout" from="recover_timer" to="." method="_on_recover_timer_timeout"]
