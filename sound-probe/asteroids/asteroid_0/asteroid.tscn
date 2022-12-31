@@ -9,6 +9,8 @@ cull_mode = 1
 polygon = PoolVector2Array( -139, -255, -51, -230, 98, -128, 143, -56, 204, 22, 237, 107, 218, 179, 141, 206, 50, 236, -57, 256, -162, 228, -223, 157, -220, -48, -237, -139, -210, -223 )
 
 [node name="asteroid" type="RigidBody2D"]
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]

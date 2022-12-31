@@ -9,6 +9,8 @@ cull_mode = 1
 polygon = PoolVector2Array( -123, -226, -62, -229, 9, -219, 81, -211, 155, -173, 207, -110, 239, -60, 256, 12, 246, 70, 219, 133, 190, 173, 127, 211, 66, 229, -17, 226, -70, 214, -116, 192, -159, 151, -209, 107, -242, 56, -256, -11, -249, -69, -223, -116, -194, -167, -156, -200 )
 
 [node name="asteroid" type="RigidBody2D"]
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="."]
@@ -20,3 +22,5 @@ polygon = PoolVector2Array( -123, -226, -62, -229, 9, -219, 81, -211, 155, -173,
 
 [node name="light_occluder" type="LightOccluder2D" parent="."]
 occluder = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_asteroid_body_entered"]
