@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://probe/probe.tscn" type="PackedScene" id=1]
 [ext_resource path="res://compass/compass.tscn" type="PackedScene" id=2]
@@ -9,8 +9,15 @@
 [ext_resource path="res://destination/jupiter/juno_waves_perijove_4.ogg" type="AudioStream" id=7]
 [ext_resource path="res://destination/interstellar_space/interstellar_space.tscn" type="PackedScene" id=8]
 [ext_resource path="res://destination/interstellar_space/voyager_1_pws.ogg" type="AudioStream" id=9]
+[ext_resource path="res://main.gd" type="Script" id=10]
+[ext_resource path="res://text/noto_sans_regular.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 11 )
 
 [node name="main" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="ui" type="CanvasLayer" parent="."]
 
@@ -33,6 +40,18 @@ destination = NodePath("../../../jupiter")
 modulate = Color( 0.372549, 0.282353, 0.454902, 1 )
 origin = NodePath("../../../probe")
 destination = NodePath("../../../interstellar_space")
+
+[node name="exit" type="Label" parent="ui"]
+visible = false
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "Exit game..."
+
+[node name="exit_timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="parallax_background" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
@@ -70,3 +89,5 @@ text = "interstellar_space_text"
 audio = ExtResource( 9 )
 
 [node name="probe" parent="." instance=ExtResource( 1 )]
+
+[connection signal="timeout" from="exit_timer" to="." method="_on_exit_timer_timeout"]
