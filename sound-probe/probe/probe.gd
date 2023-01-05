@@ -61,6 +61,13 @@ func _on_probe_collision(force):
 		$recover_timer.wait_time = force / 100
 		$recover_timer.start()
 		_activate_probe(false)
+	
+	Input.start_joy_vibration(
+			0,
+			clamp(force / 1000, 0, 1),
+			clamp(force / 500, 0, 1),
+			0.1
+	)
 
 
 func _on_recover_timer_timeout():
