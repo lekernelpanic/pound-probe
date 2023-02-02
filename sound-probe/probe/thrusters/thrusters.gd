@@ -4,7 +4,7 @@ extends Node2D
 
 const POWER = 150
 const ROTATION_POWER = 500
-const MAX_ANGULAR_VELOCITY = 0.1
+const MAX_ANGULAR_VELOCITY = 0.01
 const CLOCKWISE = {
 		"left": 0.5 * PI,
 		"right": 1.5 * PI,
