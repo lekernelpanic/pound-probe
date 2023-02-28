@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://introduction/language_button/language_button_theme.tres" type="Theme" id=1]
+[ext_resource path="res://introduction/language_button/language_button.gd" type="Script" id=2]
+
+[node name="language_button" type="OptionButton"]
+margin_left = 389.0
+margin_right = 418.0
+margin_bottom = 64.0
+theme = ExtResource( 1 )
+flat = true
+script = ExtResource( 2 )
+
+[connection signal="item_selected" from="." to="." method="_on_language_button_item_selected"]
