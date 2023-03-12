@@ -2,7 +2,7 @@ extends RigidBody2D
 # Set size during runtime and manage dust on collision
 
 
-export(float) var applied_scale = 1.0 setget set_applied_scale
+@export var applied_scale: float = 1.0 : set = set_applied_scale
 
 var _dust_scene
 var _collision_position
@@ -23,11 +23,11 @@ func set_applied_scale(new_applied_scale):
 	$sprite.scale = scale_vector
 	$collision_polygon.scale = scale_vector
 	$light_occluder.scale = scale_vector
-	mass = 4 / 3 * PI * pow(applied_scale, 3)
+	mass = 4.0 / 3.0 * PI * pow(applied_scale, 3)
 
 
 func _on_asteroid_body_entered(_body):
-	var dust = _dust_scene.instance()
+	var dust = _dust_scene.instantiate()
 	add_child(dust)
 	dust.global_position = _collision_position
 	dust.emitting = true

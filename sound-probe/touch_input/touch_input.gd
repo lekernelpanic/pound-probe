@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 # Manage touch and mouse input.
 
 
@@ -11,7 +11,7 @@ var _initial_mouse_position
 func _process(delta):
 	var direction = Vector2(0, 0)
 	
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		modulate.a += delta * APPARITION_SPEED
 		
 		var mouse_position = get_viewport().get_mouse_position()

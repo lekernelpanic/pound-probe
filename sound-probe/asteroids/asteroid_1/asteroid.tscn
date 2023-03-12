@@ -1,26 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://d17wh7t3cu36x"]
 
-[ext_resource path="res://asteroids/asteroid_1/asteroid.png" type="Texture" id=1]
-[ext_resource path="res://asteroids/asteroid_1/normal_map.png" type="Texture" id=2]
-[ext_resource path="res://asteroids/asteroid.gd" type="Script" id=3]
+[ext_resource type="Texture2D" uid="uid://sgbd53frcq5w" path="res://asteroids/asteroid_1/asteroid.png" id="1"]
+[ext_resource type="Script" path="res://asteroids/asteroid.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cnyrqroolwp1j" path="res://asteroids/asteroid_1/normal_map.png" id="3_mclra"]
 
-[sub_resource type="OccluderPolygon2D" id=1]
-cull_mode = 1
-polygon = PoolVector2Array( -165, -248, -98, -221, -51, -166, -4, -147, 46, -188, 74, -230, 148, -228, 199, -169, 197, -109, 208, -48, 249, 36, 256, 122, 181, 177, 103, 231, 38, 248, -22, 225, -99, 200, -168, 137, -255, 16, -256, -92, -242, -203 )
+[sub_resource type="CanvasTexture" id="CanvasTexture_kha2e"]
+diffuse_texture = ExtResource("1")
+normal_texture = ExtResource("3_mclra")
+
+[sub_resource type="OccluderPolygon2D" id="1"]
+cull_mode = 2
+polygon = PackedVector2Array(-165, -248, -98, -221, -51, -166, -4, -147, 46, -188, 74, -230, 148, -228, 199, -169, 197, -109, 208, -48, 249, 36, 256, 122, 181, 177, 103, 231, 38, 248, -22, 225, -99, 200, -168, 137, -255, 16, -256, -92, -242, -203)
 
 [node name="asteroid" type="RigidBody2D"]
-contacts_reported = 1
+max_contacts_reported = 1
 contact_monitor = true
-script = ExtResource( 3 )
+script = ExtResource("3")
 
-[node name="sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-normal_map = ExtResource( 2 )
+[node name="sprite" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kha2e")
 
 [node name="collision_polygon" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -165, -248, -98, -221, -51, -166, -4, -147, 46, -188, 74, -230, 148, -228, 199, -169, 197, -109, 208, -48, 249, 36, 256, 122, 181, 177, 103, 231, 38, 248, -22, 225, -99, 200, -168, 137, -255, 16, -256, -92, -242, -203 )
+polygon = PackedVector2Array(-165, -248, -98, -221, -51, -166, -4, -147, 46, -188, 74, -230, 148, -228, 199, -169, 197, -109, 208, -48, 249, 36, 256, 122, 181, 177, 103, 231, 38, 248, -22, 225, -99, 200, -168, 137, -255, 16, -256, -92, -242, -203)
 
 [node name="light_occluder" type="LightOccluder2D" parent="."]
-occluder = SubResource( 1 )
+occluder = SubResource("1")
 
 [connection signal="body_entered" from="." to="." method="_on_asteroid_body_entered"]

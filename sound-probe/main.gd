@@ -1,10 +1,14 @@
 extends Node2D
-# General to the game
+# General to the game.
 
 
 func _input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
+		if get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN:
+			get_window().mode = Window.MODE_WINDOWED
+		else:
+			get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
+	
 	
 	if event.is_action_pressed("exit"):
 		$exit_timer.start()

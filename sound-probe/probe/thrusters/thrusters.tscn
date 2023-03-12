@@ -1,82 +1,90 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://dxy0xuyuq5868"]
 
-[ext_resource path="res://probe/thrusters/particles.tres" type="Material" id=1]
-[ext_resource path="res://probe/thrusters/thrusters.ogg" type="AudioStream" id=2]
-[ext_resource path="res://probe/thrusters/particle.png" type="Texture" id=3]
-[ext_resource path="res://probe/thrusters/thrusters.gd" type="Script" id=4]
+[ext_resource type="Material" uid="uid://iaswaou1ay4a" path="res://probe/thrusters/particles.tres" id="1"]
+[ext_resource type="AudioStream" uid="uid://c5tlqekjuv2js" path="res://probe/thrusters/thrusters.ogg" id="2"]
+[ext_resource type="Texture2D" uid="uid://cpk28u66xor4l" path="res://probe/thrusters/particle.png" id="3"]
+[ext_resource type="Script" path="res://probe/thrusters/thrusters.gd" id="4"]
 
 [node name="thrusters" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="audio_stream_player" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource("2")
 volume_db = -16.0
-bus = "sound_effect"
+bus = &"sound_effect"
 
 [node name="particles" type="Node2D" parent="."]
 
-[node name="left" type="Particles2D" parent="particles"]
+[node name="left" type="GPUParticles2D" parent="particles"]
 rotation = 3.14159
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true
 
-[node name="right" type="Particles2D" parent="particles"]
+[node name="right" type="GPUParticles2D" parent="particles"]
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true
 
-[node name="up" type="Particles2D" parent="particles"]
+[node name="up" type="GPUParticles2D" parent="particles"]
 rotation = 4.71239
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true
 
-[node name="down" type="Particles2D" parent="particles"]
+[node name="down" type="GPUParticles2D" parent="particles"]
 rotation = 1.5708
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true
 
-[node name="rotation_left" type="Particles2D" parent="particles"]
-position = Vector2( -20, 0 )
+[node name="rotation_left" type="GPUParticles2D" parent="particles"]
+position = Vector2(-20, 0)
 rotation = 1.5708
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true
 
-[node name="rotation_right" type="Particles2D" parent="particles"]
-position = Vector2( 20, 0 )
+[node name="rotation_right" type="GPUParticles2D" parent="particles"]
+position = Vector2(20, 0)
 rotation = 4.71239
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true
 
-[node name="rotation_up" type="Particles2D" parent="particles"]
-position = Vector2( 0, -20 )
+[node name="rotation_up" type="GPUParticles2D" parent="particles"]
+position = Vector2(0, -20)
 rotation = 3.14159
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true
 
-[node name="rotation_down" type="Particles2D" parent="particles"]
-position = Vector2( 0, 20 )
+[node name="rotation_down" type="GPUParticles2D" parent="particles"]
+position = Vector2(0, 20)
 emitting = false
 amount = 512
+process_material = ExtResource("1")
+texture = ExtResource("3")
 lifetime = 0.2
-process_material = ExtResource( 1 )
-texture = ExtResource( 3 )
+local_coords = true

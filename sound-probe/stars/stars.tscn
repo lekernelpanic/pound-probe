@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dm8vbk3iiqaom"]
 
-[ext_resource path="res://stars/stars.tres" type="Material" id=1]
+[ext_resource type="Material" uid="uid://cuguw5vfd351e" path="res://stars/stars.tres" id="1"]
 
-[node name="stars" type="Particles2D"]
+[node name="stars" type="GPUParticles2D"]
 amount = 50000
+process_material = ExtResource("1")
 lifetime = 32.0
-visibility_rect = Rect2( -10000, -10000, 20000, 20000 )
-process_material = ExtResource( 1 )
+visibility_rect = Rect2(-10000, -10000, 20000, 20000)

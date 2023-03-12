@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://touch_input/touch_input.gd" type="Script" id=1]
-[ext_resource path="res://touch_input/touch_input.png" type="Texture" id=2]
+[ext_resource path="res://touch_input/touch_input.png" type="Texture2D" id=2]
 
-[node name="touch_input" type="Sprite"]
+[node name="touch_input" type="Sprite2D"]
 modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )

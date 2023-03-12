@@ -18,20 +18,20 @@ const COUNTERCLOCKWISE = {
 		"down": PI,
 	}
 
-export(bool) var activated = true
+@export var activated: bool = true
 
-var _particles
-var _rotation_particles
+var _thrust_particles
+var _rotate_particles
 
 
 func _ready():
-	_particles = {
+	_thrust_particles = {
 		"left": $particles/left,
 		"right": $particles/right,
 		"up": $particles/up,
 		"down": $particles/down,
 	}
-	_rotation_particles = {
+	_rotate_particles = {
 		"left": $particles/rotation_left,
 		"right": $particles/rotation_right,
 		"up": $particles/rotation_up,
@@ -43,10 +43,10 @@ func _physics_process(delta):
 	var thrust = Vector2()
 	var thrust_rotation = 0
 	
-	for particles_name in _particles:
-		_particles[particles_name].emitting = false
-	for particles_name in _rotation_particles:
-		_rotation_particles[particles_name].emitting = false
+	for particles_name in _thrust_particles:
+		_thrust_particles[particles_name].emitting = false
+	for particles_name in _rotate_particles:
+		_rotate_particles[particles_name].emitting = false
 	
 	if activated:
 		if Input.is_action_pressed("left"):
@@ -66,7 +66,7 @@ func _physics_process(delta):
 	if thrust.length() > 0:
 		_thrust_particules(thrust)
 		thrust = thrust.rotated(get_global_rotation())
-		owner.apply_impulse(Vector2(), thrust * delta)
+		owner.apply_impulse(thrust * delta, Vector2())
 	
 	if abs(thrust_rotation) > 0:
 		_thrust_rotation_particules(thrust_rotation)
@@ -80,25 +80,25 @@ func _physics_process(delta):
 
 func _thrust_particules(thrust):
 	if thrust.x > 0:
-		_particles["left"].emitting = true
+		_thrust_particles["left"].emitting = true
 	if thrust.x < 0:
-		_particles["right"].emitting = true
+		_thrust_particles["right"].emitting = true
 	if thrust.y > 0:
-		_particles["up"].emitting = true
+		_thrust_particles["up"].emitting = true
 	if thrust.y < 0:
-		_particles["down"].emitting = true
+		_thrust_particles["down"].emitting = true
 
 
 func _thrust_rotation_particules(thrust_rotation):
 	if thrust_rotation > 0:
-		for name in _rotation_particles:
-			_rotation_particles[name].rotation = CLOCKWISE[name]
+		for particles in _rotate_particles:
+			_rotate_particles[particles].rotation = CLOCKWISE[particles]
 	elif thrust_rotation < 0:
-		for name in _rotation_particles:
-			_rotation_particles[name].rotation = COUNTERCLOCKWISE[name]
+		for particles in _rotate_particles:
+			_rotate_particles[particles].rotation = COUNTERCLOCKWISE[particles]
 	
-	for particles_name in _rotation_particles:
-		_rotation_particles[particles_name].emitting = true
+	for particles_name in _rotate_particles:
+		_rotate_particles[particles_name].emitting = true
 
 
 func _audio(thrust):

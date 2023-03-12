@@ -1,20 +1,16 @@
-[gd_resource type="ParticlesMaterial" load_steps=3 format=2]
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://cuguw5vfd351e"]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.554688, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0 )
+[sub_resource type="Gradient" id="Gradient_btpkx"]
+offsets = PackedFloat32Array(0, 0.5625, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ep2fm"]
+gradient = SubResource("Gradient_btpkx")
 
 [resource]
 lifetime_randomness = 1.0
-emission_shape = 2
-emission_box_extents = Vector3( 10000, 10000, 1 )
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 6.0
-scale_random = 1.0
-color_ramp = SubResource( 2 )
+emission_shape = 3
+emission_box_extents = Vector3(10000, 10000, 1)
+gravity = Vector3(0, 0, 0)
+scale_max = 6.0
+color_ramp = SubResource("GradientTexture1D_ep2fm")

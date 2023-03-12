@@ -12,7 +12,7 @@ const ACCELERATION = 4
 const BAR_WIDTH = 8
 const BAR_TRANSPARENCY_MULTIPLIER = 4
 
-export(Vector2) var size setget set_size
+@export var size: Vector2 : set = set_size
 
 var _spectrum
 var _frequency_interval
@@ -39,13 +39,13 @@ func _process(delta):
 		var mag = _spectrum.get_magnitude_for_frequency_range(
 				_frequency_interval * i,
 				_frequency_interval * (i + 1))
-		mag = linear2db(mag.length())
+		mag = linear_to_db(mag.length())
 		mag = (mag - MIN_DB) / (MAX_DB - MIN_DB)
-		mag = clamp(mag, 0, 1)
-		mag = lerp(_histogram[i], mag, ACCELERATION * delta)
+		mag = clampf(mag, 0, 1)
+		mag = lerpf(_histogram[i], mag, ACCELERATION * delta)
 		_histogram[i] = mag
 	
-	update()
+	queue_redraw()
 
 
 func _draw():
@@ -53,7 +53,7 @@ func _draw():
 		var begin = Vector2(BAR_WIDTH / 2.0 + _width_interval * i, 0)
 		var end = begin + Vector2(0, -_histogram[i] * size.y)
 		var transparency = min(1, _histogram[i] * BAR_TRANSPARENCY_MULTIPLIER)
-		draw_line(begin, end, Color(1, 1, 1, transparency), BAR_WIDTH, false)
+		draw_line(begin,end,Color(1, 1, 1, transparency),BAR_WIDTH)
 
 
 func set_size(new_size):

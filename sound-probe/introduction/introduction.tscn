@@ -1,85 +1,70 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://kw5lah6dr1o"]
 
-[ext_resource path="res://introduction/introduction.gd" type="Script" id=1]
-[ext_resource path="res://text/noto_sans_regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://introduction/language_button/language_button.tscn" type="PackedScene" id=4]
+[ext_resource type="Script" path="res://introduction/introduction.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://e6sp4uov0rm" path="res://text/noto_sans_regular.ttf" id="2_y0b4s"]
+[ext_resource type="PackedScene" uid="uid://cg1sfep3m1afh" path="res://introduction/language_button/language_button.tscn" id="4"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 1000.0
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 200
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 42
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 42
-font_data = ExtResource( 2 )
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3s2m"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="introduction" type="Area2D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="canvas_layer" type="CanvasLayer" parent="."]
 
 [node name="panel" type="Panel" parent="canvas_layer"]
-modulate = Color( 1, 1, 1, 0.501961 )
+modulate = Color(1, 1, 1, 0.501961)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 3 )
+theme_override_styles/panel = SubResource("StyleBoxFlat_y3s2m")
 
 [node name="margin_container" type="MarginContainer" parent="canvas_layer/panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 64.0
-margin_top = 64.0
-margin_right = -64.0
-margin_bottom = -64.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
 
 [node name="v_box_container" type="VBoxContainer" parent="canvas_layer/panel/margin_container"]
-margin_right = 3712.0
-margin_bottom = 2032.0
+layout_mode = 2
 
 [node name="title" type="Label" parent="canvas_layer/panel/margin_container/v_box_container"]
-margin_right = 3712.0
-margin_bottom = 273.0
-custom_fonts/font = SubResource( 2 )
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y0b4s")
+theme_override_font_sizes/font_size = 200
 text = "sounds_in_space_title"
-autowrap = true
 
 [node name="text" type="Label" parent="canvas_layer/panel/margin_container/v_box_container"]
-margin_top = 758.0
-margin_right = 1280.0
-margin_bottom = 816.0
-rect_min_size = Vector2( 1280, 0 )
+custom_minimum_size = Vector2(1280, 0)
+layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.4
-custom_fonts/font = SubResource( 4 )
+theme_override_fonts/font = ExtResource("2_y0b4s")
+theme_override_font_sizes/font_size = 42
 text = "sounds_in_space_text"
-autowrap = true
+autowrap_mode = 3
 
 [node name="language" type="HBoxContainer" parent="canvas_layer/panel/margin_container/v_box_container"]
-margin_top = 1302.0
-margin_right = 3712.0
-margin_bottom = 1366.0
+layout_mode = 2
 size_flags_vertical = 2
 
 [node name="text" type="Label" parent="canvas_layer/panel/margin_container/v_box_container/language"]
-margin_top = 3.0
-margin_right = 385.0
-margin_bottom = 61.0
-custom_fonts/font = SubResource( 6 )
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y0b4s")
+theme_override_font_sizes/font_size = 42
 text = "language_sentence"
 
-[node name="language_button" parent="canvas_layer/panel/margin_container/v_box_container/language" instance=ExtResource( 4 )]
+[node name="language_button" parent="canvas_layer/panel/margin_container/v_box_container/language" instance=ExtResource("4")]
+layout_mode = 2
 
 [connection signal="body_exited" from="." to="." method="_on_introduction_body_exited"]

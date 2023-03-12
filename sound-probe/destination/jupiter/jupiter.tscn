@@ -1,17 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://3gpqro4fv0g1"]
 
-[ext_resource path="res://destination/light.png" type="Texture" id=1]
-[ext_resource path="res://destination/jupiter/jupiter.png" type="Texture" id=2]
+[ext_resource type="Texture2D" uid="uid://2lugdgwtkl17" path="res://destination/jupiter/jupiter.png" id="2"]
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id="1"]
 light_mode = 1
 
-[node name="jupiter" type="Sprite"]
-material = SubResource( 1 )
-texture = ExtResource( 2 )
-
-[node name="light" type="Light2D" parent="."]
-texture = ExtResource( 1 )
-texture_scale = 42.0
-color = Color( 0.756863, 0.490196, 0.380392, 1 )
-mode = 2
+[node name="jupiter" type="Sprite2D"]
+material = SubResource("1")
+texture = ExtResource("2")

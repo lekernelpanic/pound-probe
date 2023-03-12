@@ -7,8 +7,8 @@ const MIN_ALPHA = 0.04
 const VANISH_DISTANCE = 12_000
 const VANISHED_DISTANCE = 6_000
 
-export(NodePath) var origin
-export(NodePath) var destination
+@export var origin: NodePath
+@export var destination: NodePath
 
 var _origin_node
 var _destination_node

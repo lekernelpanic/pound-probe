@@ -4,9 +4,9 @@ extends CanvasLayer
 
 const ALPHA = 0.5
 
-export(bool) var appear
-export(String) var title setget set_title
-export(String) var text setget set_text
+@export var appear: bool
+@export var title: String : set = set_title
+@export var text: String : set = set_text
 
 
 func _process(delta):

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://6m1th1ca7y4"]
+
+[ext_resource type="Script" path="res://destination/parallax_layer/destination.gd" id="1_1tk1y"]
+
+[node name="destination" type="ParallaxLayer"]
+motion_scale = Vector2(0.25, 0.25)
+script = ExtResource("1_1tk1y")
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]

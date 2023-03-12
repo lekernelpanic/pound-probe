@@ -33,13 +33,13 @@ func _ready():
 
 func _generate_asteroid():
 	var asteroid_index = _random.randi_range(0, _asteroid_scenes.size() - 1)
-	var asteroid = _asteroid_scenes[asteroid_index].instance();
+	var asteroid = _asteroid_scenes[asteroid_index].instantiate();
 	
 	var distance = sqrt(
 			_random.randf_range(0, pow(MAX_DISTANCE, 2))) + DISTANCE_OFFSET
 	var angle = _random.randf_range(0, 2 * PI)
 	asteroid.position = Vector2(distance * cos(angle), distance * sin(angle))
-	
+
 	asteroid.applied_scale = _random.randf_range(MIN_SCALE, MAX_SCALE)
 	asteroid.linear_velocity = Vector2(
 			_random.randf_range(-100, 100),

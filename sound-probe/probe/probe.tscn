@@ -1,64 +1,62 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://bmjvm15nkuta2"]
 
-[ext_resource path="res://probe/probe.gd" type="Script" id=1]
-[ext_resource path="res://probe/voyager_1.png" type="Texture" id=2]
-[ext_resource path="res://probe/light.png" type="Texture" id=3]
-[ext_resource path="res://probe/thrusters/thrusters.tscn" type="PackedScene" id=4]
-[ext_resource path="res://probe/collision_sound/collision_sound.tscn" type="PackedScene" id=5]
-[ext_resource path="res://probe/appear.tres" type="Shader" id=6]
-[ext_resource path="res://probe/juno.png" type="Texture" id=7]
-[ext_resource path="res://probe/camera/camera.tscn" type="PackedScene" id=8]
+[ext_resource type="Script" path="res://probe/probe.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://000ggo87c2ei" path="res://probe/voyager_1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://fvqcqmr6g5e5" path="res://probe/light.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://dxy0xuyuq5868" path="res://probe/thrusters/thrusters.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://probe/collision_sound/collision_sound.tscn" id="5"]
+[ext_resource type="Shader" uid="uid://bvivpg8cttlbv" path="res://probe/appear.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://do1bf2yvotp8b" path="res://probe/juno.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://hxbs71myj7cl" path="res://probe/camera/camera.tscn" id="8"]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 6 )
-shader_param/on = true
-shader_param/apparition = 0.0
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("6")
+shader_parameter/on = true
+shader_parameter/apparition = 0.0
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 6 )
-shader_param/on = true
-shader_param/apparition = 0.0
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("6")
+shader_parameter/on = true
+shader_parameter/apparition = 0.0
 
 [node name="probe" type="RigidBody2D" groups=["probe"]]
-contacts_reported = 1
+max_contacts_reported = 1
 contact_monitor = true
 can_sleep = false
-angular_damp = 0.0
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="camera" parent="." instance=ExtResource( 8 )]
+[node name="camera" parent="." instance=ExtResource("8")]
 
 [node name="recover_timer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
 
-[node name="collision_sound" parent="." instance=ExtResource( 5 )]
+[node name="collision_sound" parent="." instance=ExtResource("5")]
+bus = &"sound_effect"
 
-[node name="thrusters" parent="." instance=ExtResource( 4 )]
+[node name="thrusters" parent="." instance=ExtResource("4")]
 
-[node name="light" type="Light2D" parent="."]
-texture = ExtResource( 3 )
-texture_scale = 16.0
+[node name="light" type="PointLight2D" parent="."]
 shadow_enabled = true
-shadow_gradient_length = 2.0
-shadow_filter = 5
-shadow_filter_smooth = 4.0
+shadow_filter = 1
+texture = ExtResource("3")
+texture_scale = 16.0
 
 [node name="voyager_1" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -7, -97, 1, -94, 8, -97, 13, -93, 18, -87, 17, -76, 10, -75, 5, -77, 1, -77, -5, -72, -2, -64, 1, -58, 12, -48, 13, -35, 13, -24, 28, -9, 22, -5, 26, 2, 32, 14, 22, 14, 18, 21, 13, 26, 141, 105, 140, 107, 5, 23, -3, 24, 1, 35, 6, 44, 16, 57, 12, 70, 8, 76, 2, 70, 2, 63, 1, 57, -2, 45, -7, 36, -9, 34, -47, 213, -50, 212, -11, 33, -16, 28, -42, 52, -65, 71, -89, 93, -93, 88, -67, 66, -47, 49, -26, 30, -19, 24, -14, 17, -23, 20, -37, 22, -51, 18, -59, 4, -58, -11, -53, -25, -43, -39, -35, -48, -18, -58, -17, -69, -16, -79, -14, -87 )
+polygon = PackedVector2Array(-7, -97, 1, -94, 8, -97, 13, -93, 18, -87, 17, -76, 10, -75, 5, -77, 1, -77, -5, -72, -2, -64, 1, -58, 12, -48, 13, -35, 13, -24, 28, -9, 22, -5, 26, 2, 32, 14, 22, 14, 18, 21, 13, 26, 141, 105, 140, 107, 5, 23, -3, 24, 1, 35, 6, 44, 16, 57, 12, 70, 8, 76, 2, 70, 2, 63, 1, 57, -2, 45, -7, 36, -9, 34, -47, 213, -50, 212, -11, 33, -16, 28, -42, 52, -65, 71, -89, 93, -93, 88, -67, 66, -47, 49, -26, 30, -19, 24, -14, 17, -23, 20, -37, 22, -51, 18, -59, 4, -58, -11, -53, -25, -43, -39, -35, -48, -18, -58, -17, -69, -16, -79, -14, -87)
 disabled = true
 
-[node name="sprite" type="Sprite" parent="voyager_1"]
-material = SubResource( 1 )
-texture = ExtResource( 2 )
+[node name="sprite" type="Sprite2D" parent="voyager_1"]
+material = SubResource("1")
+texture = ExtResource("2")
 
 [node name="juno" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 7, -171, 24, -170, 37, -168, 51, -164, 49, -151, 46, -136, 43, -118, 41, -108, 39, -97, 37, -88, 37, -75, 35, -63, 30, -56, 30, -50, 28, -42, 26, -32, 25, -23, 21, -23, 24, -18, 28, -6, 31, 3, 35, 1, 46, 10, 54, 17, 59, 22, 63, 20, 69, 26, 79, 34, 89, 42, 97, 49, 106, 56, 114, 63, 109, 68, 117, 73, 125, 83, 134, 86, 135, 96, 142, 104, 151, 114, 156, 125, 141, 120, 131, 116, 122, 110, 113, 110, 109, 104, 100, 99, 90, 92, 86, 97, 79, 91, 70, 84, 62, 77, 55, 71, 49, 66, 43, 62, 34, 55, 35, 52, 31, 48, 25, 43, 17, 36, 9, 31, 13, 26, 3, 26, -7, 25, -14, 25, -17, 23, -16, 27, -32, 32, -46, 38, -46, 41, -52, 42, -63, 47, -77, 53, -85, 56, -96, 60, -107, 64, -117, 68, -133, 73, -150, 80, -157, 61, -165, 38, -147, 33, -132, 27, -123, 23, -109, 19, -101, 15, -91, 10, -84, 8, -71, 3, -62, 0, -59, 2, -52, -2, -40, -6, -30, -10, -26, -8, -18, -19, -13, -23, -13, -29, -12, -35, -11, -43, -10, -53, -8, -63, -8, -75, -7, -86, -6, -95, -4, -105, -2, -118, 0, -131, 3, -145, 4, -159 )
+polygon = PackedVector2Array(7, -171, 24, -170, 37, -168, 51, -164, 49, -151, 46, -136, 43, -118, 41, -108, 39, -97, 37, -88, 37, -75, 35, -63, 30, -56, 30, -50, 28, -42, 26, -32, 25, -23, 21, -23, 24, -18, 28, -6, 31, 3, 35, 1, 46, 10, 54, 17, 59, 22, 63, 20, 69, 26, 79, 34, 89, 42, 97, 49, 106, 56, 114, 63, 109, 68, 117, 73, 125, 83, 134, 86, 135, 96, 142, 104, 151, 114, 156, 125, 141, 120, 131, 116, 122, 110, 113, 110, 109, 104, 100, 99, 90, 92, 86, 97, 79, 91, 70, 84, 62, 77, 55, 71, 49, 66, 43, 62, 34, 55, 35, 52, 31, 48, 25, 43, 17, 36, 9, 31, 13, 26, 3, 26, -7, 25, -14, 25, -17, 23, -16, 27, -32, 32, -46, 38, -46, 41, -52, 42, -63, 47, -77, 53, -85, 56, -96, 60, -107, 64, -117, 68, -133, 73, -150, 80, -157, 61, -165, 38, -147, 33, -132, 27, -123, 23, -109, 19, -101, 15, -91, 10, -84, 8, -71, 3, -62, 0, -59, 2, -52, -2, -40, -6, -30, -10, -26, -8, -18, -19, -13, -23, -13, -29, -12, -35, -11, -43, -10, -53, -8, -63, -8, -75, -7, -86, -6, -95, -4, -105, -2, -118, 0, -131, 3, -145, 4, -159)
 disabled = true
 
-[node name="sprite" type="Sprite" parent="juno"]
-material = SubResource( 2 )
-texture = ExtResource( 7 )
+[node name="sprite" type="Sprite2D" parent="juno"]
+material = SubResource("2")
+texture = ExtResource("7")
 
 [connection signal="body_entered" from="." to="." method="_on_probe_body_entered"]
 [connection signal="collision" from="." to="." method="_on_probe_collision"]

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/collision.ogg-037470e9e73c88b83e263051e6485bb2.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://by31y2lp7brvn"
+path="res://.godot/imported/collision.ogg-037470e9e73c88b83e263051e6485bb2.oggvorbisstr"
 
 [deps]
 
 source_file="res://probe/collision_sound/collision.ogg"
-dest_files=[ "res://.import/collision.ogg-037470e9e73c88b83e263051e6485bb2.oggstr" ]
+dest_files=["res://.godot/imported/collision.ogg-037470e9e73c88b83e263051e6485bb2.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
