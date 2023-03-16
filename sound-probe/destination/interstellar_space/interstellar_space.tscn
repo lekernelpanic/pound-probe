@@ -35,6 +35,5 @@ amount = 512
 process_material = SubResource("5")
 texture = ExtResource("1")
 lifetime = 64.0
-preprocess = 255.36
 visibility_rect = Rect2(-4000, -4000, 8000, 8000)
 local_coords = true
