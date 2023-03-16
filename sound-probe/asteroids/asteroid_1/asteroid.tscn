@@ -8,9 +8,9 @@
 diffuse_texture = ExtResource("1")
 normal_texture = ExtResource("3_mclra")
 
-[sub_resource type="OccluderPolygon2D" id="1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nyow0"]
 cull_mode = 2
-polygon = PackedVector2Array(-165, -248, -98, -221, -51, -166, -4, -147, 46, -188, 74, -230, 148, -228, 199, -169, 197, -109, 208, -48, 249, 36, 256, 122, 181, 177, 103, 231, 38, 248, -22, 225, -99, 200, -168, 137, -255, 16, -256, -92, -242, -203)
+polygon = PackedVector2Array(-165, -247, -98, -221, 75, -229, 147, -228, 199, -169, 197, -110, 207, -50, 249, 36, 256, 121, 181, 176, 103, 231, 38, 248, -21, 225, -99, 200, -167, 138, -255, 18, -256, -92, -242, -204)
 
 [node name="asteroid" type="RigidBody2D"]
 max_contacts_reported = 1
@@ -21,9 +21,9 @@ script = ExtResource("3")
 texture = SubResource("CanvasTexture_kha2e")
 
 [node name="collision_polygon" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-165, -248, -98, -221, -51, -166, -4, -147, 46, -188, 74, -230, 148, -228, 199, -169, 197, -109, 208, -48, 249, 36, 256, 122, 181, 177, 103, 231, 38, 248, -22, 225, -99, 200, -168, 137, -255, 16, -256, -92, -242, -203)
+polygon = PackedVector2Array(-165, -247, -98, -221, 75, -229, 147, -228, 199, -169, 197, -110, 207, -50, 249, 36, 256, 121, 181, 176, 103, 231, 38, 248, -21, 225, -99, 200, -167, 138, -255, 18, -256, -92, -242, -204)
 
 [node name="light_occluder" type="LightOccluder2D" parent="."]
-occluder = SubResource("1")
+occluder = SubResource("OccluderPolygon2D_nyow0")
 
 [connection signal="body_entered" from="." to="." method="_on_asteroid_body_entered"]
