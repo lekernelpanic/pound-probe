@@ -19,8 +19,6 @@ This project is distributed under the terms of the GNU general public license.
 
 Assets are distributed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
 
-[Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) is licensed under the Open Font License.
-
 ## Sources
 
 ### Earth - Van Allen Probes

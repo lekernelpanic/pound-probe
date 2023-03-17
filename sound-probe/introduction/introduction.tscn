@@ -1,14 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://kw5lah6dr1o"]
+[gd_scene load_steps=5 format=3 uid="uid://kw5lah6dr1o"]
 
 [ext_resource type="Script" path="res://introduction/introduction.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://e6sp4uov0rm" path="res://text/noto_sans_regular.ttf" id="2_y0b4s"]
 [ext_resource type="PackedScene" uid="uid://cg1sfep3m1afh" path="res://introduction/language_button/language_button.tscn" id="4"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 1000.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3s2m"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5l1n"]
+bg_color = Color(0, 0, 0, 0.501961)
 
 [node name="introduction" type="Area2D"]
 script = ExtResource("1")
@@ -19,11 +18,10 @@ shape = SubResource("1")
 [node name="canvas_layer" type="CanvasLayer" parent="."]
 
 [node name="panel" type="Panel" parent="canvas_layer"]
-modulate = Color(1, 1, 1, 0.501961)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_y3s2m")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5l1n")
 
 [node name="margin_container" type="MarginContainer" parent="canvas_layer/panel"]
 layout_mode = 0
@@ -39,7 +37,7 @@ layout_mode = 2
 
 [node name="title" type="Label" parent="canvas_layer/panel/margin_container/v_box_container"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_y0b4s")
+theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_font_sizes/font_size = 200
 text = "sounds_in_space_title"
 
@@ -49,7 +47,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.4
-theme_override_fonts/font = ExtResource("2_y0b4s")
+theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_font_sizes/font_size = 42
 text = "sounds_in_space_text"
 autowrap_mode = 3
@@ -60,7 +58,7 @@ size_flags_vertical = 2
 
 [node name="text" type="Label" parent="canvas_layer/panel/margin_container/v_box_container/language"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_y0b4s")
+theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_font_sizes/font_size = 42
 text = "language_sentence"
 
