@@ -2,6 +2,11 @@ extends Node2D
 # General to the game.
 
 
+func _ready():
+	_scale_adaptation()
+	get_tree().get_root().size_changed.connect(_scale_adaptation)
+
+
 func _input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
 		if get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN:
@@ -21,3 +26,8 @@ func _input(event):
 
 func _on_exit_timer_timeout():
 	get_tree().quit()
+
+
+func _scale_adaptation():
+	var size = get_window().size.y
+	get_window().content_scale_factor = clamp(800.0 / size, 1, 1.5)
