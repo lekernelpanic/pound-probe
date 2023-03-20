@@ -69,7 +69,7 @@ Original space audio recordings provided courtesy of NASA and The University of 
 
 Original space audio recordings provided courtesy of NASA and The University of Iowa. [https://space-audio.org/](https://space-audio.org/) Attribution 3.0 Unported (CC BY 3.0)
 
-### Edasich - TESS
+### Iota Draconis - TESS
 
 * [TESS Tunes into an All-sky ‘Symphony’ of Red Giants](https://svs.gsfc.nasa.gov/13897)
 * [About TESS](https://www.nasa.gov/content/about-tess)
