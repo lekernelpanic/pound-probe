@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://probe/probe.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://000ggo87c2ei" path="res://probe/voyager_1.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://fvqcqmr6g5e5" path="res://probe/light.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://dxy0xuyuq5868" path="res://probe/thrusters/thrusters.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://probe/collision_sound/collision_sound.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://cg4kml7ar4h3q" path="res://probe/light.svg" id="5_4m67q"]
 [ext_resource type="Shader" uid="uid://bvivpg8cttlbv" path="res://probe/appear.tres" id="6"]
 [ext_resource type="Texture2D" uid="uid://do1bf2yvotp8b" path="res://probe/juno.png" id="7"]
 [ext_resource type="PackedScene" uid="uid://hxbs71myj7cl" path="res://probe/camera/camera.tscn" id="8"]
@@ -39,7 +39,7 @@ bus = &"sound_effect"
 [node name="light" type="PointLight2D" parent="."]
 shadow_enabled = true
 shadow_filter = 1
-texture = ExtResource("3")
+texture = ExtResource("5_4m67q")
 texture_scale = 16.0
 
 [node name="voyager_1" type="CollisionPolygon2D" parent="."]

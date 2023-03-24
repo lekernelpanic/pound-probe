@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://bqkd1wb1256p6"]
 
-[ext_resource type="Texture2D" uid="uid://dh5clahjof4yo" path="res://introduction/language_button/arrow.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ba5ctwtsngprw" path="res://introduction/language_button/arrow.svg" id="1_reg2k"]
 
 [sub_resource type="StyleBoxEmpty" id="12"]
 
@@ -16,7 +16,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0.0313726)
 
 [resource]
 OptionButton/font_sizes/font_size = 42
-OptionButton/icons/arrow = ExtResource("2")
+OptionButton/icons/arrow = ExtResource("1_reg2k")
 OptionButton/styles/focus = SubResource("12")
 PopupMenu/font_sizes/font_size = 42
 PopupMenu/icons/radio_checked = SubResource("14")

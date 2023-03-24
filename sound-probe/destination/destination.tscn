@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd2mmddqms16h"]
 
 [ext_resource type="Script" path="res://destination/destination.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cec82gbjuf6he" path="res://destination/light.png" id="2_qkndt"]
+[ext_resource type="Texture2D" uid="uid://dfe2qdcy4563p" path="res://destination/light.svg" id="2_irnmu"]
 [ext_resource type="PackedScene" uid="uid://cvv2owqommgcr" path="res://destination/description/description.tscn" id="3"]
 
 [sub_resource type="CircleShape2D" id="1"]
@@ -14,7 +14,7 @@ script = ExtResource("1")
 shape = SubResource("1")
 
 [node name="point_light" type="PointLight2D" parent="."]
-texture = ExtResource("2_qkndt")
+texture = ExtResource("2_irnmu")
 texture_scale = 42.0
 
 [node name="audio_streamp_player" type="AudioStreamPlayer2D" parent="."]

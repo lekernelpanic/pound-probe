@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://djo7uf2ysxcnf"]
 
-[ext_resource type="Texture2D" uid="uid://cbhq0ndgpeoa1" path="res://asteroids/dust/dust.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ddgq2jl5m4a06" path="res://asteroids/dust/dust.svg" id="1_8nnxp"]
 
 [sub_resource type="Curve" id="1"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -28,7 +28,7 @@ z_index = -1
 emitting = false
 amount = 16
 process_material = SubResource("3")
-texture = ExtResource("1")
+texture = ExtResource("1_8nnxp")
 one_shot = true
 explosiveness = 1.0
 local_coords = true

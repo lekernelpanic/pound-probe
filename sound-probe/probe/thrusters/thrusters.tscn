@@ -2,8 +2,8 @@
 
 [ext_resource type="Material" uid="uid://iaswaou1ay4a" path="res://probe/thrusters/particles.tres" id="1"]
 [ext_resource type="AudioStream" uid="uid://c5tlqekjuv2js" path="res://probe/thrusters/thrusters.ogg" id="2"]
-[ext_resource type="Texture2D" uid="uid://cpk28u66xor4l" path="res://probe/thrusters/particle.png" id="3"]
 [ext_resource type="Script" path="res://probe/thrusters/thrusters.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bfmpeaka61jjm" path="res://probe/thrusters/particle.svg" id="4_ar7yx"]
 
 [node name="thrusters" type="Node2D"]
 script = ExtResource("4")
@@ -20,7 +20,7 @@ rotation = 3.14159
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true
 
@@ -28,7 +28,7 @@ local_coords = true
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true
 
@@ -37,7 +37,7 @@ rotation = 4.71239
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true
 
@@ -46,7 +46,7 @@ rotation = 1.5708
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true
 
@@ -56,7 +56,7 @@ rotation = 1.5708
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true
 
@@ -66,7 +66,7 @@ rotation = 4.71239
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true
 
@@ -76,7 +76,7 @@ rotation = 3.14159
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true
 
@@ -85,6 +85,6 @@ position = Vector2(0, 20)
 emitting = false
 amount = 512
 process_material = ExtResource("1")
-texture = ExtResource("3")
+texture = ExtResource("4_ar7yx")
 lifetime = 0.2
 local_coords = true

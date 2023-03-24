@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://main.gd" id="10"]
 [ext_resource type="PackedScene" uid="uid://bmjvm15nkuta2" path="res://probe/probe.tscn" id="10_hl08m"]
 [ext_resource type="PackedScene" uid="uid://bgyjf12g6im7g" path="res://destination/interstellar_space/interstellar_space.tscn" id="11_24t2h"]
-[ext_resource type="PackedScene" path="res://touch_input/touch_input.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://dkukvv5hx15m0" path="res://touch_input/touch_input.tscn" id="12"]
 [ext_resource type="AudioStream" uid="uid://p67l3utxhbfp" path="res://destination/interstellar_space/voyager_1_pws.ogg" id="12_2tkdk"]
 
 [node name="main" type="Node2D"]

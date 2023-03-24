@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgyjf12g6im7g"]
 
-[ext_resource type="Texture2D" uid="uid://jkmmiqicp1tp" path="res://destination/interstellar_space/particle.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://donmags5bposa" path="res://destination/interstellar_space/particle.svg" id="1_g7xu3"]
 
 [sub_resource type="Gradient" id="Gradient_d0cqf"]
 offsets = PackedFloat32Array(0, 0.329646, 0.732301, 1)
@@ -33,7 +33,7 @@ color_ramp = SubResource("GradientTexture1D_p5ie7")
 [node name="interstellar_space" type="GPUParticles2D"]
 amount = 512
 process_material = SubResource("5")
-texture = ExtResource("1")
+texture = ExtResource("1_g7xu3")
 lifetime = 64.0
 visibility_rect = Rect2(-4000, -4000, 8000, 8000)
 local_coords = true
