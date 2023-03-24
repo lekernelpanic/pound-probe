@@ -10,8 +10,7 @@ In this game, you will play a little space probe, floating, traveling, discoveri
 
 ## Project
 
-* The game is powered by Godot engine 4.0.
-* The original sprites are in SVG Inkscape 1.2.
+Powered by Godot engine 4.0.
 
 ### Licence
 
