@@ -29,5 +29,5 @@ func _on_exit_timer_timeout():
 
 
 func _scale_adaptation():
-	var size = get_window().size.y
+	var size: float = get_window().size.y
 	get_window().content_scale_factor = clamp(800.0 / size, 1, 1.5)

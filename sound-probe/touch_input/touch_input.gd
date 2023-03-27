@@ -2,19 +2,19 @@ extends Sprite2D
 # Manage touch and mouse input.
 
 
-const APPARITION_SPEED = 0.25
-const ALPHA = 0.2
+const APPARITION_SPEED: float = 0.25
+const ALPHA: float = 0.2
 
-var _initial_mouse_position
+var _initial_mouse_position: Vector2
 
 
-func _process(delta):
-	var direction = Vector2(0, 0)
+func _process(delta) -> void:
+	var direction: Vector2 = Vector2(0, 0)
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		modulate.a += delta * APPARITION_SPEED
 		
-		var mouse_position = get_viewport().get_mouse_position()
+		var mouse_position: Vector2 = get_viewport().get_mouse_position()
 		if _initial_mouse_position == Vector2(0, 0):
 			_initial_mouse_position = mouse_position
 			position = mouse_position
@@ -33,7 +33,7 @@ func _process(delta):
 	modulate.a = clamp(modulate.a, 0, ALPHA)
 
 
-func _apply(direction):
+func _apply(direction) -> void:
 	_stop()
 	
 	if direction.x == -1:
@@ -46,7 +46,7 @@ func _apply(direction):
 		Input.action_press("down")
 
 
-func _stop():
+func _stop() -> void:
 	Input.action_release("left")
 	Input.action_release("right")
 	Input.action_release("up")
