@@ -12,12 +12,12 @@ func _init() -> void:
 	_dust_scene = preload("res://asteroids/dust/dust.tscn")
 
 
-func _integrate_forces(state) -> void:
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if state.get_contact_count() >= 1:
 		_collision_position = state.get_contact_collider_position(0)
 
 
-func set_applied_scale(new_applied_scale) -> void:
+func set_applied_scale(new_applied_scale: float) -> void:
 	applied_scale = new_applied_scale
 	var scale_vector: Vector2 = Vector2(applied_scale, applied_scale)
 	$sprite.scale = scale_vector
@@ -26,7 +26,7 @@ func set_applied_scale(new_applied_scale) -> void:
 	mass = 4.0 / 3.0 * PI * pow(applied_scale, 3)
 
 
-func _on_asteroid_body_entered(_body) -> void:
+func _on_asteroid_body_entered(_body: PhysicsBody2D) -> void:
 	var dust: GPUParticles2D = _dust_scene.instantiate()
 	add_child(dust)
 	dust.global_position = _collision_position

@@ -21,7 +21,7 @@ func _init() -> void:
 	_rand.randomize()
 
 
-func _process(delta) -> void:
+func _process(delta: float) -> void:
 	zoom = zoom.lerp(_final_zoom, ZOOM_SMOOTHNESS)
 	
 	_shake_strength = lerpf(_shake_strength, 0, SHAKE_DECAY * delta)
@@ -32,5 +32,5 @@ func _process(delta) -> void:
 	) * _shake_strength
 
 
-func _on_probe_collision(force) -> void:
+func _on_probe_collision(force: float) -> void:
 	_shake_strength = force * SHAKE_OFFSET_FACTOR

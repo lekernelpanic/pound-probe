@@ -23,5 +23,5 @@ func _ready() -> void:
 		i += 1
 
 
-func _on_language_button_item_selected(index) -> void:
+func _on_language_button_item_selected(index: int) -> void:
 	TranslationServer.set_locale(get_item_metadata(index))

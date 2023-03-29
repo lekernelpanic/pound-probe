@@ -2,7 +2,7 @@ extends RigidBody2D
 # Probe movements and collision sound.
 
 
-signal collision(force)
+signal collision(force: float)
 
 const APPARITION_SPEED: float = 2
 const MINIMAL_COLLISION_FORCE: float = 200

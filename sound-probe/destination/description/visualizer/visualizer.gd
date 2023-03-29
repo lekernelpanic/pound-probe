@@ -34,7 +34,7 @@ func _ready() -> void:
 	_spectrum = AudioServer.get_bus_effect_instance(bus_id, 0)
 
 
-func _process(delta) -> void:
+func _process(delta: float) -> void:
 	for i in range(DEFINITION):
 		var mag: float = _spectrum.get_magnitude_for_frequency_range(
 				_frequency_interval * i,
@@ -57,6 +57,6 @@ func _draw() -> void:
 		draw_line(begin,end,Color(1, 1, 1, transparency),BAR_WIDTH)
 
 
-func set_size(new_size) -> void:
+func set_size(new_size: Vector2) -> void:
 	size = new_size
 	_width_interval = new_size.x / DEFINITION

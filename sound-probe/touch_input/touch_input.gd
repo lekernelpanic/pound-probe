@@ -8,7 +8,7 @@ const ALPHA: float = 0.2
 var _initial_mouse_position: Vector2
 
 
-func _process(delta) -> void:
+func _process(delta: float) -> void:
 	var direction: Vector2 = Vector2(0, 0)
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -33,7 +33,7 @@ func _process(delta) -> void:
 	modulate.a = clamp(modulate.a, 0, ALPHA)
 
 
-func _apply(direction) -> void:
+func _apply(direction: Vector2) -> void:
 	_stop()
 	
 	if direction.x == -1:

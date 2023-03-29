@@ -24,12 +24,12 @@ func _ready() -> void:
 	layer_instance.add_child(background_instance, true)
 
 
-func _on_jupiter_body_entered(body) -> void:
+func _on_jupiter_body_entered(body: PhysicsBody2D) -> void:
 	if(body.is_in_group("probe")):
 		$description.appear = true
 		body.probe = probe
 
 
-func _on_jupiter_body_exited(body) -> void:
+func _on_jupiter_body_exited(body: PhysicsBody2D) -> void:
 	if(body.is_in_group("probe")):
 		$description.appear = false

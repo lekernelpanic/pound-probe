@@ -9,7 +9,7 @@ const ALPHA: float = 0.5
 @export_multiline var text: String : set = set_text
 
 
-func _process(delta) -> void:
+func _process(delta: float) -> void:
 	if appear:
 		visible = true
 		$panel.modulate.a = clamp($panel.modulate.a + delta, 0, ALPHA)
@@ -25,11 +25,11 @@ func _process(delta) -> void:
 	$panel/visualizer.size.y /= 4
 
 
-func set_title(new_title) -> void:
+func set_title(new_title: String) -> void:
 	$panel/margin_container/v_box_container/title.text = new_title
 	title = new_title
 
 
-func set_text(new_text) -> void:
+func set_text(new_text: String) -> void:
 	$panel/margin_container/v_box_container/text.text = new_text
 	text = new_text

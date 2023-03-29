@@ -39,7 +39,7 @@ func _ready() -> void:
 	}
 
 
-func _physics_process(delta) -> void:
+func _physics_process(delta: float) -> void:
 	var thrust: Vector2 = Vector2()
 	var thrust_rotation: float = 0
 	
@@ -78,7 +78,7 @@ func _physics_process(delta) -> void:
 		_audio(false)
 
 
-func _thrust_particules(thrust) -> void:
+func _thrust_particules(thrust: Vector2) -> void:
 	if thrust.x > 0:
 		_thrust_particles["left"].emitting = true
 	if thrust.x < 0:
@@ -89,7 +89,7 @@ func _thrust_particules(thrust) -> void:
 		_thrust_particles["down"].emitting = true
 
 
-func _thrust_rotation_particules(thrust_rotation) -> void:
+func _thrust_rotation_particules(thrust_rotation: float) -> void:
 	if thrust_rotation > 0:
 		for particles in _rotate_particles:
 			_rotate_particles[particles].rotation = CLOCKWISE[particles]
@@ -101,7 +101,7 @@ func _thrust_rotation_particules(thrust_rotation) -> void:
 		_rotate_particles[particles_name].emitting = true
 
 
-func _audio(thrust) -> void:
+func _audio(thrust: bool) -> void:
 	if thrust:
 		if !$audio_stream_player.playing:
 				$audio_stream_player.play()
