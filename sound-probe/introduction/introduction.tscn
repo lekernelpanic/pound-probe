@@ -38,6 +38,8 @@ layout_mode = 2
 
 [node name="title" type="Label" parent="canvas_layer/panel/margin_container/v_box_container"]
 layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.25
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("2_fwkgu")
 theme_override_font_sizes/font_size = 200
@@ -47,8 +49,7 @@ text = "sounds_in_space_title"
 custom_minimum_size = Vector2(1280, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 6
-size_flags_stretch_ratio = 1.4
+size_flags_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("2_fwkgu")
 theme_override_font_sizes/font_size = 42
@@ -57,7 +58,7 @@ autowrap_mode = 3
 
 [node name="language" type="HBoxContainer" parent="canvas_layer/panel/margin_container/v_box_container"]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 8
 
 [node name="text" type="Label" parent="canvas_layer/panel/margin_container/v_box_container/language"]
 layout_mode = 2
