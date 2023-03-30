@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://donmags5bposa" path="res://destination/interstellar_space/particle.svg" id="1_g7xu3"]
 
 [sub_resource type="Gradient" id="Gradient_d0cqf"]
-offsets = PackedFloat32Array(0, 0.329646, 0.732301, 1)
-colors = PackedColorArray(0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0)
+offsets = PackedFloat32Array(0, 0.338912, 0.732301, 1)
+colors = PackedColorArray(0, 0, 0.12549, 0, 0, 0, 0.12549, 1, 0.12549, 0, 0.12549, 1, 1, 0, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_p5ie7"]
 gradient = SubResource("Gradient_d0cqf")
@@ -24,16 +24,15 @@ particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_min = 4.0
-scale_max = 4.0
 scale_curve = SubResource("4")
-color = Color(1, 1, 1, 0.0313726)
+color = Color(1, 1, 1, 0.25098)
 color_ramp = SubResource("GradientTexture1D_p5ie7")
 
 [node name="interstellar_space" type="GPUParticles2D"]
 amount = 512
 process_material = SubResource("5")
 texture = ExtResource("1_g7xu3")
-lifetime = 64.0
+lifetime = 128.0
+preprocess = 204.76
 visibility_rect = Rect2(-4000, -4000, 8000, 8000)
 local_coords = true
