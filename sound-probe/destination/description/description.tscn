@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="3_5syvc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjknm"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.501961)
 
 [node name="description" type="CanvasLayer"]
 script = ExtResource("1")
@@ -15,36 +15,37 @@ modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gjknm")
 
 [node name="visualizer" parent="panel" instance=ExtResource("3")]
 modulate = Color(0.756863, 0.490196, 0.380392, 0.12549)
 
 [node name="margin_container" type="MarginContainer" parent="panel"]
+custom_minimum_size = Vector2(3712, 2032)
 layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = 64.0
 offset_top = 64.0
-offset_right = -2413.0
-offset_bottom = -64.0
+offset_right = 3776.0
+offset_bottom = 2096.0
 
 [node name="v_box_container" type="VBoxContainer" parent="panel/margin_container"]
 layout_mode = 2
 
 [node name="title" type="Label" parent="panel/margin_container/v_box_container"]
-modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 size_flags_vertical = 2
+size_flags_stretch_ratio = 0.25
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("3_5syvc")
-theme_override_font_sizes/font_size = 256
+theme_override_font_sizes/font_size = 200
 
 [node name="text" type="Label" parent="panel/margin_container/v_box_container"]
 custom_minimum_size = Vector2(1280, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 2
-size_flags_stretch_ratio = 2.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("3_5syvc")
 theme_override_font_sizes/font_size = 42

@@ -2,8 +2,6 @@ extends CanvasLayer
 # Manage the apparition of the description and placement of the visualizer.
 
 
-const ALPHA: float = 0.5
-
 @export var appear: bool
 @export var title: String : set = set_title
 @export_multiline var text: String : set = set_text
@@ -12,9 +10,9 @@ const ALPHA: float = 0.5
 func _process(delta: float) -> void:
 	if appear:
 		visible = true
-		$panel.modulate.a = clamp($panel.modulate.a + delta, 0, ALPHA)
+		$panel.modulate.a = clamp($panel.modulate.a + delta, 0, 1)
 	else:
-		$panel.modulate.a = clamp($panel.modulate.a - delta, 0, ALPHA)
+		$panel.modulate.a = clamp($panel.modulate.a - delta, 0, 1)
 		if $panel.modulate.a <= 0:
 			visible = false
 	
