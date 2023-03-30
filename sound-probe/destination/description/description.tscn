@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvv2owqommgcr"]
+[gd_scene load_steps=5 format=3 uid="uid://cvv2owqommgcr"]
 
 [ext_resource type="Script" path="res://destination/description/description.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://csrvgwcixrevv" path="res://destination/description/visualizer/visualizer.tscn" id="3"]
+[ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="3_5syvc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjknm"]
 bg_color = Color(0, 0, 0, 1)
@@ -36,6 +37,7 @@ modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_fonts/font = ExtResource("3_5syvc")
 theme_override_font_sizes/font_size = 256
 
 [node name="text" type="Label" parent="panel/margin_container/v_box_container"]
@@ -44,5 +46,6 @@ layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 2.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_fonts/font = ExtResource("3_5syvc")
 theme_override_font_sizes/font_size = 42
 autowrap_mode = 3

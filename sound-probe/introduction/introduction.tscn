@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://kw5lah6dr1o"]
+[gd_scene load_steps=6 format=3 uid="uid://kw5lah6dr1o"]
 
 [ext_resource type="Script" path="res://introduction/introduction.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_fwkgu"]
 [ext_resource type="PackedScene" uid="uid://cg1sfep3m1afh" path="res://introduction/language_button/language_button.tscn" id="4"]
 
 [sub_resource type="CircleShape2D" id="1"]
@@ -38,6 +39,7 @@ layout_mode = 2
 [node name="title" type="Label" parent="canvas_layer/panel/margin_container/v_box_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_fonts/font = ExtResource("2_fwkgu")
 theme_override_font_sizes/font_size = 200
 text = "sounds_in_space_title"
 
@@ -48,6 +50,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.4
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_fonts/font = ExtResource("2_fwkgu")
 theme_override_font_sizes/font_size = 42
 text = "sounds_in_space_text"
 autowrap_mode = 3
@@ -59,6 +62,7 @@ size_flags_vertical = 2
 [node name="text" type="Label" parent="canvas_layer/panel/margin_container/v_box_container/language"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_fonts/font = ExtResource("2_fwkgu")
 theme_override_font_sizes/font_size = 42
 text = "language_sentence"
 

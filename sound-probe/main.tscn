@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=14 format=3 uid="uid://d3ao72r1m0s5g"]
 
+[ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dm8vbk3iiqaom" path="res://stars/stars.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://6m1th1ca7y4" path="res://destination/parallax_layer/destination.tscn" id="4_tey06"]
@@ -25,6 +26,7 @@ offset_top = 16.0
 offset_right = 40.0
 offset_bottom = 14.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_fonts/font = ExtResource("2_5vomp")
 theme_override_font_sizes/font_size = 42
 text = "exit"
 
