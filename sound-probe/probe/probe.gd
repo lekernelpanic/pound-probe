@@ -7,7 +7,9 @@ signal collision(force: float)
 const APPARITION_SPEED: float = 2
 const MINIMAL_COLLISION_FORCE: float = 200
 
-@export_enum("voyager_1", "juno") var probe = "voyager_1" : set = set_probe
+@export_enum("voyager_1",
+		"van_allen_probe",
+		"juno") var probe = "voyager_1" : set = set_probe
 
 var _probe_nodes: Dictionary
 var _transiting: bool
@@ -16,6 +18,7 @@ var _transiting: bool
 func _ready() -> void:
 	_probe_nodes = {
 		"voyager_1": $voyager_1,
+		"van_allen_probe": $van_allen_probe,
 		"juno": $juno,
 	}
 	set_probe(probe)
