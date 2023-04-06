@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=17 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
@@ -16,8 +16,17 @@
 [ext_resource type="PackedScene" uid="uid://dkukvv5hx15m0" path="res://touch_input/touch_input.tscn" id="12"]
 [ext_resource type="AudioStream" uid="uid://p67l3utxhbfp" path="res://destination/interstellar_space/voyager_1_pws.ogg" id="12_2tkdk"]
 
+[sub_resource type="Environment" id="Environment_o638w"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_threshold = 0.1
+
 [node name="main" type="Node2D"]
 script = ExtResource("10")
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o638w")
 
 [node name="ui" type="CanvasLayer" parent="."]
 

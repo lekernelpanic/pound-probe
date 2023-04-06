@@ -3,4 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://delsm5y24go5e" path="res://destination/earth/earth.png" id="1_tg387"]
 
 [node name="earth" type="Sprite2D"]
+modulate = Color(1, 1, 2, 1)
 texture = ExtResource("1_tg387")
