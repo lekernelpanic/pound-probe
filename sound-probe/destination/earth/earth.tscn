@@ -1,7 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwrd7hcqgwr3g"]
+[gd_scene load_steps=6 format=3 uid="uid://bl6segc6p5dbg"]
 
 [ext_resource type="Texture2D" uid="uid://delsm5y24go5e" path="res://destination/earth/earth.png" id="1_tg387"]
+[ext_resource type="Texture2D" uid="uid://ddjow0golwuu2" path="res://destination/earth/aurora_particle.png" id="2_gkems"]
 
-[node name="earth" type="Sprite2D"]
+[sub_resource type="Gradient" id="Gradient_fq1ot"]
+offsets = PackedFloat32Array(0, 0.484211, 1)
+colors = PackedColorArray(0.588235, 1, 0.588235, 0, 0.588235, 1, 0.588235, 1, 0.588235, 1, 0.588235, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s74h7"]
+gradient = SubResource("Gradient_fq1ot")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k0thm"]
+lifetime_randomness = 0.5
+emission_shape = 6
+emission_ring_axis = Vector3(0, 3, 1)
+emission_ring_height = 20.0
+emission_ring_radius = 300.0
+emission_ring_inner_radius = 280.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.1
+color = Color(1, 1, 1, 0.12549)
+color_ramp = SubResource("GradientTexture1D_s74h7")
+
+[node name="earth" type="Node2D"]
+
+[node name="earth" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 2, 1)
 texture = ExtResource("1_tg387")
+
+[node name="auroras" type="GPUParticles2D" parent="."]
+position = Vector2(-237, -902)
+rotation = -0.261799
+amount = 512
+process_material = SubResource("ParticleProcessMaterial_k0thm")
+texture = ExtResource("2_gkems")
+lifetime = 8.0
+local_coords = true
