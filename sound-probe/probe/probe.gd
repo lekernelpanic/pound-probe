@@ -9,6 +9,7 @@ const MINIMAL_COLLISION_FORCE: float = 200
 
 @export_enum("voyager_1",
 		"van_allen_probe",
+		"mars_2020_spacecraft",
 		"juno") var probe = "voyager_1" : set = set_probe
 
 var _probe_nodes: Dictionary
@@ -19,6 +20,7 @@ func _ready() -> void:
 	_probe_nodes = {
 		"voyager_1": $voyager_1,
 		"van_allen_probe": $van_allen_probe,
+		"mars_2020_spacecraft": $mars_2020_spacecraft,
 		"juno": $juno,
 	}
 	set_probe(probe)
