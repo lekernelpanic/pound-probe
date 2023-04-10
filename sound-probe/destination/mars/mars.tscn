@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://db2xj1hl1ges0"]
+
+[ext_resource type="Texture2D" uid="uid://b8aj0tsgu0ga2" path="res://destination/mars/mars.png" id="1_2dt8j"]
+
+[node name="mars" type="Sprite2D"]
+texture = ExtResource("1_2dt8j")

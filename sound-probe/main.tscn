@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=18 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://dd2mmddqms16h" path="res://destination/destination.tscn" id="7_sapxi"]
 [ext_resource type="PackedScene" uid="uid://3gpqro4fv0g1" path="res://destination/jupiter/jupiter.tscn" id="8_ojh24"]
 [ext_resource type="AudioStream" uid="uid://cjv2inhqnyx61" path="res://destination/jupiter/juno_waves_perijove_4.ogg" id="9_s6idr"]
-[ext_resource type="PackedScene" uid="uid://dwrd7hcqgwr3g" path="res://destination/earth/earth.tscn" id="9_uut2j"]
+[ext_resource type="PackedScene" uid="uid://bl6segc6p5dbg" path="res://destination/earth/earth.tscn" id="9_uut2j"]
 [ext_resource type="Script" path="res://main.gd" id="10"]
 [ext_resource type="PackedScene" uid="uid://bmjvm15nkuta2" path="res://probe/probe.tscn" id="10_hl08m"]
 [ext_resource type="AudioStream" uid="uid://br5xl7ftas3qt" path="res://destination/earth/van_allen.ogg" id="10_yxq8j"]
 [ext_resource type="PackedScene" uid="uid://bgyjf12g6im7g" path="res://destination/interstellar_space/interstellar_space.tscn" id="11_24t2h"]
+[ext_resource type="PackedScene" uid="uid://db2xj1hl1ges0" path="res://destination/mars/mars.tscn" id="11_afeiu"]
 [ext_resource type="PackedScene" uid="uid://dkukvv5hx15m0" path="res://touch_input/touch_input.tscn" id="12"]
 [ext_resource type="AudioStream" uid="uid://p67l3utxhbfp" path="res://destination/interstellar_space/voyager_1_pws.ogg" id="12_2tkdk"]
 
@@ -74,6 +75,15 @@ title = "earth_title"
 text = "earth_text"
 light_color = Color(0.121569, 0.172549, 0.329412, 1)
 audio = ExtResource("10_yxq8j")
+
+[node name="mars" parent="." instance=ExtResource("7_sapxi")]
+position = Vector2(-11047, -9773)
+background = ExtResource("11_afeiu")
+layer = NodePath("../parallax_background/destination")
+probe = "voyager_1"
+title = "mars_title"
+text = "mars_text"
+light_color = Color(0.807843, 0.568627, 0.462745, 1)
 
 [node name="jupiter" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(22000, -10000)
