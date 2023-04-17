@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmjvm15nkuta2"]
+[gd_scene load_steps=17 format=3 uid="uid://bmjvm15nkuta2"]
 
 [ext_resource type="Script" path="res://probe/probe.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://000ggo87c2ei" path="res://probe/voyager_1.png" id="2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://hxbs71myj7cl" path="res://probe/camera/camera.tscn" id="8"]
 [ext_resource type="Texture2D" uid="uid://b5b7ldv68tb74" path="res://probe/van_allen_probe.png" id="9_vytai"]
 [ext_resource type="Texture2D" uid="uid://dy8qua7k4qsy1" path="res://probe/mars_2020_spacecraft.png" id="9_xjnml"]
+[ext_resource type="Texture2D" uid="uid://baxcq5kdrnxm3" path="res://probe/parker_polar_probe.png" id="10_ywr4s"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 shader = ExtResource("6")
@@ -22,6 +23,11 @@ shader_parameter/on = true
 shader_parameter/apparition = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_26dej"]
+shader = ExtResource("6")
+shader_parameter/on = true
+shader_parameter/apparition = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dlnu"]
 shader = ExtResource("6")
 shader_parameter/on = true
 shader_parameter/apparition = 0.0
@@ -77,6 +83,13 @@ disabled = true
 [node name="sprite" type="Sprite2D" parent="mars_2020_spacecraft"]
 material = SubResource("ShaderMaterial_26dej")
 texture = ExtResource("9_xjnml")
+
+[node name="parker_polar_probe" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(74, -155, 77, -155, 79, -68, 82, -57, 84, -20, 85, 3, 87, 26, 85, 54, 84, 54, 86, 141, 84, 141, 82, 54, 77, 53, 77, 41, 71, 40, 71, 48, 51, 42, 32, 37, 17, 33, 11, 26, -5, 28, -14, 28, -4, 33, 10, 34, 9, 44, -20, 43, -21, 29, -39, 29, -58, 31, -70, 39, -75, 19, -86, 19, -86, 6, -88, -14, -81, -14, -75, -16, -76, -21, -149, 6, -217, 9, -217, 7, -149, 4, -76, -24, -76, -30, -60, -30, -56, -36, -51, -29, -39, -30, -25, -31, -14, -31, -14, -36, -26, -43, 5, -45, -5, -36, -6, -32, 7, -31, 14, -39, 35, -48, 50, -55, 67, -59, 77, -67)
+
+[node name="sprite" type="Sprite2D" parent="parker_polar_probe"]
+material = SubResource("ShaderMaterial_4dlnu")
+texture = ExtResource("10_ywr4s")
 
 [node name="juno" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(7, -171, 24, -170, 37, -168, 51, -164, 49, -151, 46, -136, 43, -118, 41, -108, 39, -97, 37, -88, 37, -75, 35, -63, 30, -56, 30, -50, 28, -42, 26, -32, 25, -23, 21, -23, 24, -18, 28, -6, 31, 3, 35, 1, 46, 10, 54, 17, 59, 22, 63, 20, 69, 26, 79, 34, 89, 42, 97, 49, 106, 56, 114, 63, 109, 68, 117, 73, 125, 83, 134, 86, 135, 96, 142, 104, 151, 114, 156, 125, 141, 120, 131, 116, 122, 110, 113, 110, 109, 104, 100, 99, 90, 92, 86, 97, 79, 91, 70, 84, 62, 77, 55, 71, 49, 66, 43, 62, 34, 55, 35, 52, 31, 48, 25, 43, 17, 36, 9, 31, 13, 26, 3, 26, -7, 25, -14, 25, -17, 23, -16, 27, -32, 32, -46, 38, -46, 41, -52, 42, -63, 47, -77, 53, -85, 56, -96, 60, -107, 64, -117, 68, -133, 73, -150, 80, -157, 61, -165, 38, -147, 33, -132, 27, -123, 23, -109, 19, -101, 15, -91, 10, -84, 8, -71, 3, -62, 0, -59, 2, -52, -2, -40, -6, -30, -10, -26, -8, -18, -19, -13, -23, -13, -29, -12, -35, -11, -43, -10, -53, -8, -63, -8, -75, -7, -86, -6, -95, -4, -105, -2, -118, 0, -131, 3, -145, 4, -159)
