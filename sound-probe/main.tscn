@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=20 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dkukvv5hx15m0" path="res://touch_input/touch_input.tscn" id="12"]
 [ext_resource type="AudioStream" uid="uid://p67l3utxhbfp" path="res://destination/interstellar_space/voyager_1_pws.ogg" id="12_2tkdk"]
 [ext_resource type="AudioStream" uid="uid://ct2wvg4pmfd1f" path="res://destination/mars/first_audio_recording_of_sounds_on_mars.ogg" id="12_2621c"]
+[ext_resource type="PackedScene" uid="uid://ueoo5kon3oen" path="res://destination/venus/venus.tscn" id="13_xymd2"]
 
 [sub_resource type="Environment" id="Environment_o638w"]
 background_mode = 3
@@ -86,6 +87,15 @@ title = "mars_title"
 text = "mars_text"
 light_color = Color(0.807843, 0.568627, 0.462745, 1)
 audio = ExtResource("12_2621c")
+
+[node name="venus" parent="." instance=ExtResource("7_sapxi")]
+position = Vector2(7107, -13945)
+background = ExtResource("13_xymd2")
+layer = NodePath("../parallax_background/destination")
+probe = "voyager_1"
+title = "venus_title"
+text = "venus_text"
+light_color = Color(0.411765, 0.176471, 0.0352941, 1)
 
 [node name="jupiter" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(22000, -10000)

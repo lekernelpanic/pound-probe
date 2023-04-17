@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ueoo5kon3oen"]
+
+[ext_resource type="Texture2D" uid="uid://bmrxxtxni116s" path="res://destination/venus/venus.png" id="1_mykh5"]
+
+[node name="venus" type="Sprite2D"]
+texture = ExtResource("1_mykh5")
