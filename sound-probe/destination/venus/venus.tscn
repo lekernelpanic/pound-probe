@@ -1,6 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://ueoo5kon3oen"]
+[gd_scene load_steps=6 format=3 uid="uid://ueoo5kon3oen"]
 
 [ext_resource type="Texture2D" uid="uid://bmrxxtxni116s" path="res://destination/venus/venus.png" id="1_mykh5"]
+[ext_resource type="Texture2D" uid="uid://buraiq2aw5u4d" path="res://destination/venus/cloud_particle.png" id="2_whjx7"]
 
-[node name="venus" type="Sprite2D"]
+[sub_resource type="Gradient" id="Gradient_pgqft"]
+offsets = PackedFloat32Array(0, 0.261111, 0.516667, 0.794444, 1)
+colors = PackedColorArray(0.541176, 0.25098, 0.054902, 0, 0.541176, 0.25098, 0.054902, 1, 0.934927, 0.777452, 0.679355, 1, 0.71, 0.5396, 0.426, 1, 0.541176, 0.25098, 0.054902, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8h6i3"]
+gradient = SubResource("Gradient_pgqft")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dutrm"]
+emission_shape = 2
+emission_sphere_radius = 980.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -4.0
+initial_velocity_max = 4.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_max = 8.0
+color = Color(1, 1, 1, 0.12549)
+color_ramp = SubResource("GradientTexture1D_8h6i3")
+
+[node name="venus" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_mykh5")
+
+[node name="particles" type="GPUParticles2D" parent="."]
+amount = 8000
+process_material = SubResource("ParticleProcessMaterial_dutrm")
+texture = ExtResource("2_whjx7")
+lifetime = 8.0
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
+local_coords = true
