@@ -5,6 +5,7 @@ extends CanvasLayer
 @export var appear: bool
 @export var title: String : set = set_title
 @export_multiline var text: String : set = set_text
+@export_multiline var credits: String : set = set_credits
 
 
 func _process(delta: float) -> void:
@@ -31,3 +32,8 @@ func set_title(new_title: String) -> void:
 func set_text(new_text: String) -> void:
 	$panel/margin_container/v_box_container/text.text = new_text
 	text = new_text
+
+
+func set_credits(new_credits: String) -> void:
+	$panel/margin_container/v_box_container/sound_credits.text = new_credits
+	credits = new_credits

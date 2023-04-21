@@ -7,6 +7,7 @@ extends Area2D
 @export var probe: String
 @export var title: String
 @export_multiline var text: String
+@export var credits: String
 @export var light_color: Color
 @export var audio: AudioStream
 
@@ -14,6 +15,7 @@ extends Area2D
 func _ready() -> void:
 	$description.title = title
 	$description.text = text
+	$description.credits = credits
 	$point_light.color = light_color
 	$audio_streamp_player.stream = audio
 	$audio_streamp_player.playing = true

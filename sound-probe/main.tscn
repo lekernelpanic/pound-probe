@@ -76,6 +76,7 @@ layer = NodePath("../parallax_background/destination")
 probe = "van_allen_probe"
 title = "earth_title"
 text = "earth_text"
+credits = "earth_audio_credits"
 light_color = Color(0.121569, 0.172549, 0.329412, 1)
 audio = ExtResource("10_yxq8j")
 
@@ -86,6 +87,7 @@ layer = NodePath("../parallax_background/destination")
 probe = "mars_2020_spacecraft"
 title = "mars_title"
 text = "mars_text"
+credits = "mars_audio_credits"
 light_color = Color(0.807843, 0.568627, 0.462745, 1)
 audio = ExtResource("12_2621c")
 
@@ -96,6 +98,7 @@ layer = NodePath("../parallax_background/destination")
 probe = "parker_polar_probe"
 title = "venus_title"
 text = "venus_text"
+credits = "venus_audio_credits"
 light_color = Color(0.411765, 0.176471, 0.0352941, 1)
 audio = ExtResource("14_xwtqm")
 
@@ -106,6 +109,7 @@ layer = NodePath("../parallax_background/destination")
 probe = "juno"
 title = "jupiter_title"
 text = "jupiter_text"
+credits = "jupiter_audio_credits"
 light_color = Color(0.756863, 0.490196, 0.380392, 1)
 audio = ExtResource("9_s6idr")
 
@@ -116,6 +120,7 @@ layer = NodePath("../parallax_background/destination")
 probe = "voyager_1"
 title = "interstellar_space_title"
 text = "interstellar_space_text"
+credits = "interstellar_space_audio_credits"
 light_color = Color(0.372549, 0.282353, 0.454902, 1)
 audio = ExtResource("12_2tkdk")
 
