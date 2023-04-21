@@ -65,18 +65,27 @@ size_flags_vertical = 3
 texture = ExtResource("3_4u0m1")
 stretch_mode = 2
 
-[node name="language" type="HBoxContainer" parent="canvas_layer/panel/margin_container/v_box_container"]
+[node name="footer" type="HBoxContainer" parent="canvas_layer/panel/margin_container/v_box_container"]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="text" type="Label" parent="canvas_layer/panel/margin_container/v_box_container/language"]
+[node name="text" type="Label" parent="canvas_layer/panel/margin_container/v_box_container/footer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("2_fwkgu")
 theme_override_font_sizes/font_size = 42
 text = "language_sentence"
 
-[node name="language_button" parent="canvas_layer/panel/margin_container/v_box_container/language" instance=ExtResource("4")]
+[node name="language_button" parent="canvas_layer/panel/margin_container/v_box_container/footer" instance=ExtResource("4")]
 layout_mode = 2
+
+[node name="credits" type="Label" parent="canvas_layer/panel/margin_container/v_box_container/footer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_fonts/font = ExtResource("2_fwkgu")
+theme_override_font_sizes/font_size = 42
+text = "credits"
+horizontal_alignment = 2
 
 [connection signal="body_exited" from="." to="." method="_on_introduction_body_exited"]
