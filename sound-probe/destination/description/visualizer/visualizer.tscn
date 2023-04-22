@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://csrvgwcixrevv"]
+[gd_scene load_steps=3 format=3 uid="uid://csrvgwcixrevv"]
 
 [ext_resource type="Script" path="res://destination/description/visualizer/visualizer.gd" id="1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvlvu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="visualizer" type="Node2D"]
 script = ExtResource("1")
+styleBox = SubResource("StyleBoxFlat_gvlvu")

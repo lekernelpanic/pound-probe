@@ -20,8 +20,9 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gjknm")
 
 [node name="visualizer" parent="panel" instance=ExtResource("3")]
-visible = false
-modulate = Color(0.756863, 0.490196, 0.380392, 0.12549)
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(2829, 1732)
+size = Vector2(400, 800)
 
 [node name="margin_container" type="MarginContainer" parent="panel"]
 custom_minimum_size = Vector2(3712, 2032)
