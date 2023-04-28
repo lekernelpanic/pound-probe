@@ -118,10 +118,10 @@ audio = ExtResource("9_s6idr")
 position = Vector2(-30000, 0)
 background = ExtResource("17_tgeb1")
 layer = NodePath("../parallax_background/destination")
-probe = "voyager_1"
+probe = "soho"
 title = "sun_title"
 text = "sun_text"
-credits = "sun_sound_credits"
+credits = "sun_audio_credits"
 light_color = Color(2, 2, 2, 1)
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
