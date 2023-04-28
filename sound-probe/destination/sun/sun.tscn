@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://xioiiese8487"]
+
+[ext_resource type="Texture2D" uid="uid://bf5ulnumawu53" path="res://destination/sun/sun.png" id="1_413r3"]
+[ext_resource type="Shader" uid="uid://du2ram2g6jrqy" path="res://destination/sun/shader.tres" id="1_tvln3"]
+[ext_resource type="Texture2D" uid="uid://brnias12qvptt" path="res://destination/sun/particles.svg" id="3_5d6sw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqip8"]
+shader = ExtResource("1_tvln3")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wq3pv"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_kif1n"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ulvwk"]
+gradient = SubResource("Gradient_kif1n")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w3dx0"]
+emission_shape = 2
+emission_sphere_radius = 1800.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.1
+color = Color(1, 1, 1, 0.75)
+color_ramp = SubResource("GradientTexture1D_ulvwk")
+anim_offset_max = 1.0
+
+[node name="sun" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hqip8")
+texture = ExtResource("1_413r3")
+
+[node name="particles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_wq3pv")
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_w3dx0")
+texture = ExtResource("3_5d6sw")
+lifetime = 64.0
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
+local_coords = true
