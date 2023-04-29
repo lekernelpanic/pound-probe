@@ -11,14 +11,18 @@ extends Area2D
 @export var light_color: Color
 @export var audio: AudioStream
 
+var _description: Resource
+var _description_instance: CanvasLayer
+
+
+func _init() -> void:
+	_description = preload("res://destination/description/description.tscn")
+
 
 func _ready() -> void:
-	$description.title = title
-	$description.text = text
-	$description.credits = credits
 	$point_light.color = light_color
-	$audio_streamp_player.stream = audio
-	$audio_streamp_player.playing = true
+	$audio_stream_player.stream = audio
+	$audio_stream_player.playing = true
 	
 	var background_instance: Node2D = background.instantiate()
 	var layer_instance: ParallaxLayer = get_node(layer)
@@ -26,12 +30,16 @@ func _ready() -> void:
 	layer_instance.add_child(background_instance, true)
 
 
-func _on_jupiter_body_entered(body: PhysicsBody2D) -> void:
-	if(body.is_in_group("probe")):
-		$description.appear = true
+func _on_body_entered(body):
+	if body.is_in_group("probe"):
+		_description_instance = _description.instantiate()
+		_description_instance.title = title
+		_description_instance.text = text
+		_description_instance.credits = credits
+		add_child(_description_instance)
 		body.probe = probe
 
 
-func _on_jupiter_body_exited(body: PhysicsBody2D) -> void:
-	if(body.is_in_group("probe")):
-		$description.appear = false
+func _on_body_exited(body):
+	if body.is_in_group("probe"):
+		_description_instance.quit()

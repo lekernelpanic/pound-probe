@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd2mmddqms16h"]
+[gd_scene load_steps=4 format=3 uid="uid://dd2mmddqms16h"]
 
 [ext_resource type="Script" path="res://destination/destination.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dfe2qdcy4563p" path="res://destination/light.svg" id="2_irnmu"]
-[ext_resource type="PackedScene" uid="uid://cvv2owqommgcr" path="res://destination/description/description.tscn" id="3"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 5000.0
@@ -17,12 +16,10 @@ shape = SubResource("1")
 texture = ExtResource("2_irnmu")
 texture_scale = 42.0
 
-[node name="audio_streamp_player" type="AudioStreamPlayer2D" parent="."]
+[node name="audio_stream_player" type="AudioStreamPlayer2D" parent="."]
 max_distance = 32000.0
 attenuation = 4.0
 bus = &"space_sound"
 
-[node name="description" parent="." instance=ExtResource("3")]
-
-[connection signal="body_entered" from="." to="." method="_on_jupiter_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_jupiter_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
