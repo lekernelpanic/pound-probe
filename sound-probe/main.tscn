@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=23 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ueoo5kon3oen" path="res://destination/venus/venus.tscn" id="13_xymd2"]
 [ext_resource type="AudioStream" uid="uid://claluftlwxhtd" path="res://destination/venus/radio_emission_in_venus.ogg" id="14_xwtqm"]
 [ext_resource type="PackedScene" uid="uid://xioiiese8487" path="res://destination/sun/sun.tscn" id="17_tgeb1"]
+[ext_resource type="AudioStream" uid="uid://chkpb83qnsemv" path="res://destination/sun/sun_sonification.ogg" id="18_lsby1"]
 
 [sub_resource type="Environment" id="Environment_o638w"]
 background_mode = 3
@@ -123,6 +124,7 @@ title = "sun_title"
 text = "sun_text"
 credits = "sun_audio_credits"
 light_color = Color(2, 2, 2, 1)
+audio = ExtResource("18_lsby1")
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(-11000, 12000)
