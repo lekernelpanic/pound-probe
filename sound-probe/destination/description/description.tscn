@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://csrvgwcixrevv" path="res://destination/description/visualizer/visualizer.tscn" id="3"]
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="3_5syvc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjknm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eo3qm"]
 bg_color = Color(0, 0, 0, 0.501961)
 
 [node name="description" type="CanvasLayer"]
@@ -16,9 +16,7 @@ modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gjknm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_eo3qm")
 
 [node name="visualizer" parent="panel" instance=ExtResource("3")]
 modulate = Color(1, 1, 1, 0.501961)
@@ -26,12 +24,13 @@ position = Vector2(2829, 1732)
 size = Vector2(400, 800)
 
 [node name="margin_container" type="MarginContainer" parent="panel"]
-custom_minimum_size = Vector2(3712, 2032)
 layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 64.0
 offset_top = 64.0
-offset_right = 3776.0
-offset_bottom = 2096.0
+offset_right = -64.0
+offset_bottom = -64.0
 
 [node name="v_box_container" type="VBoxContainer" parent="panel/margin_container"]
 layout_mode = 2
@@ -43,6 +42,7 @@ size_flags_stretch_ratio = 0.25
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("3_5syvc")
 theme_override_font_sizes/font_size = 200
+text = "sounds_in_space_title"
 
 [node name="text" type="Label" parent="panel/margin_container/v_box_container"]
 custom_minimum_size = Vector2(1280, 0)
@@ -52,14 +52,15 @@ size_flags_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("3_5syvc")
 theme_override_font_sizes/font_size = 42
+text = "sounds_in_space_text"
 autowrap_mode = 3
 
 [node name="sound_credits" type="Label" parent="panel/margin_container/v_box_container"]
 layout_mode = 2
-size_flags_vertical = 10
-theme_override_colors/font_color = Color(1, 1, 1, 0.25098)
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("3_5syvc")
-theme_override_font_sizes/font_size = 30
-text = "earth_sound_credits"
+theme_override_font_sizes/font_size = 42
+text = "credits"
 horizontal_alignment = 2
-vertical_alignment = 2
