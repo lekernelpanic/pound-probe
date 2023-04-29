@@ -38,4 +38,5 @@ amount = 512
 process_material = SubResource("ParticleProcessMaterial_k0thm")
 texture = ExtResource("2_gkems")
 lifetime = 8.0
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 local_coords = true
