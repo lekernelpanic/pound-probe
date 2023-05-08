@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=24 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://claluftlwxhtd" path="res://destination/venus/radio_emission_in_venus.ogg" id="14_xwtqm"]
 [ext_resource type="PackedScene" uid="uid://xioiiese8487" path="res://destination/sun/sun.tscn" id="17_tgeb1"]
 [ext_resource type="AudioStream" uid="uid://chkpb83qnsemv" path="res://destination/sun/sun_sonification.ogg" id="18_lsby1"]
+[ext_resource type="PackedScene" uid="uid://dy7jb00co6sww" path="res://destination/saturn/saturn.tscn" id="19_3d3st"]
 
 [sub_resource type="Environment" id="Environment_o638w"]
 background_mode = 3
@@ -104,6 +105,17 @@ credits = "venus_audio_credits"
 light_color = Color(0.411765, 0.176471, 0.0352941, 1)
 audio = ExtResource("14_xwtqm")
 
+[node name="sun" parent="." instance=ExtResource("7_sapxi")]
+position = Vector2(-30000, 0)
+background = ExtResource("17_tgeb1")
+layer = NodePath("../parallax_background/destination")
+probe = "soho"
+title = "sun_title"
+text = "sun_text"
+credits = "sun_audio_credits"
+light_color = Color(2, 2, 2, 1)
+audio = ExtResource("18_lsby1")
+
 [node name="jupiter" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(22000, -10000)
 background = ExtResource("8_ojh24")
@@ -115,16 +127,15 @@ credits = "jupiter_audio_credits"
 light_color = Color(0.756863, 0.490196, 0.380392, 1)
 audio = ExtResource("9_s6idr")
 
-[node name="sun" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(-30000, 0)
-background = ExtResource("17_tgeb1")
+[node name="saturn" parent="." instance=ExtResource("7_sapxi")]
+position = Vector2(0, 20000)
+background = ExtResource("19_3d3st")
 layer = NodePath("../parallax_background/destination")
-probe = "soho"
-title = "sun_title"
-text = "sun_text"
-credits = "sun_audio_credits"
-light_color = Color(2, 2, 2, 1)
-audio = ExtResource("18_lsby1")
+probe = "voyager_1"
+title = "saturn_title"
+text = "saturn_text"
+credits = "saturn_audio_credits"
+light_color = Color(0.886275, 0.788235, 0.631373, 1)
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(-11000, 12000)
