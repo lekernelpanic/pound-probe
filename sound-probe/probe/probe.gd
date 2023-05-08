@@ -12,7 +12,8 @@ const MINIMAL_COLLISION_FORCE: float = 200
 		"mars_2020_spacecraft",
 		"parker_polar_probe",
 		"soho",
-		"juno") var probe = "voyager_1" : set = set_probe
+		"juno",
+		"cassini") var probe = "voyager_1" : set = set_probe
 
 var _probe_nodes: Dictionary
 var _transiting: bool
@@ -26,6 +27,7 @@ func _ready() -> void:
 		"mars_2020_spacecraft": $mars_2020_spacecraft,
 		"parker_polar_probe": $parker_polar_probe,
 		"juno": $juno,
+		"cassini": $cassini,
 	}
 	set_probe(probe)
 

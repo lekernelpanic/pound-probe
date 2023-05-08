@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmjvm15nkuta2"]
+[gd_scene load_steps=21 format=3 uid="uid://bmjvm15nkuta2"]
 
 [ext_resource type="Script" path="res://probe/probe.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://000ggo87c2ei" path="res://probe/voyager_1.png" id="2"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dy8qua7k4qsy1" path="res://probe/mars_2020_spacecraft.png" id="9_xjnml"]
 [ext_resource type="Texture2D" uid="uid://baxcq5kdrnxm3" path="res://probe/parker_polar_probe.png" id="10_ywr4s"]
 [ext_resource type="Texture2D" uid="uid://dr3qrs1sifupx" path="res://probe/soho.png" id="11_b8q8c"]
+[ext_resource type="Texture2D" uid="uid://b8tkpto7h14je" path="res://probe/cassini.png" id="13_csvpm"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 shader = ExtResource("6")
@@ -39,6 +40,11 @@ shader_parameter/on = true
 shader_parameter/apparition = 0.0
 
 [sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("6")
+shader_parameter/on = true
+shader_parameter/apparition = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xetbq"]
 shader = ExtResource("6")
 shader_parameter/on = true
 shader_parameter/apparition = 0.0
@@ -113,6 +119,14 @@ disabled = true
 [node name="sprite" type="Sprite2D" parent="juno"]
 material = SubResource("2")
 texture = ExtResource("7")
+
+[node name="cassini" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(54, -254, 56, -253, -12, -45, 3, -46, 19, -41, 33, -31, 41, -20, 46, -3, 44, 13, 37, 27, 27, 37, 15, 43, 0, 45, -12, 44, -25, 38, -36, 28, -43, 16, -46, 2, -45, -11, -253, 66, -253, 63, -44, -13, -38, -27, -53, -41, -68, -56, -84, -71, -93, -84, -97, -87, -114, -99, -131, -117, -148, -132, -163, -146, -175, -161, -174, -165, -176, -170, -172, -167, -168, -167, -153, -156, -137, -141, -120, -124, -102, -108, -92, -94, -88, -90, -74, -81, -58, -65, -44, -52, -28, -37, -14, -44)
+disabled = true
+
+[node name="sprite" type="Sprite2D" parent="cassini"]
+material = SubResource("ShaderMaterial_xetbq")
+texture = ExtResource("13_csvpm")
 
 [connection signal="body_entered" from="." to="." method="_on_probe_body_entered"]
 [connection signal="collision" from="." to="." method="_on_probe_collision"]

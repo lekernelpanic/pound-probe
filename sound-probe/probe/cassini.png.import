@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlaackle3kchn"
-path="res://.godot/imported/mars_2020_spacecraft.svg-f608d2a495d9940b15d917206d191bde.ctex"
+uid="uid://b8tkpto7h14je"
+path="res://.godot/imported/cassini.png-57ab0e6ad9817190af3d0e9ddd5b9701.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://probe/mars_2020_spacecraft.svg"
-dest_files=["res://.godot/imported/mars_2020_spacecraft.svg-f608d2a495d9940b15d917206d191bde.ctex"]
+source_file="res://probe/cassini.png"
+dest_files=["res://.godot/imported/cassini.png-57ab0e6ad9817190af3d0e9ddd5b9701.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
