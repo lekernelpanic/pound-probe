@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ddjow0golwuu2" path="res://destination/earth/aurora_particle.png" id="2_gkems"]
 
 [sub_resource type="Gradient" id="Gradient_fq1ot"]
-offsets = PackedFloat32Array(0, 0.484211, 1)
+offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0.588235, 1, 0.588235, 0, 0.588235, 1, 0.588235, 1, 0.588235, 1, 0.588235, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_s74h7"]
@@ -32,7 +32,7 @@ modulate = Color(1, 1, 2, 1)
 texture = ExtResource("1_tg387")
 
 [node name="auroras" type="GPUParticles2D" parent="."]
-position = Vector2(-237, -902)
+position = Vector2(-230, -900)
 rotation = -0.261799
 amount = 512
 process_material = SubResource("ParticleProcessMaterial_k0thm")
