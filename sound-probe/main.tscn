@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=25 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://xioiiese8487" path="res://destination/sun/sun.tscn" id="17_tgeb1"]
 [ext_resource type="AudioStream" uid="uid://chkpb83qnsemv" path="res://destination/sun/sun_sonification.ogg" id="18_lsby1"]
 [ext_resource type="PackedScene" uid="uid://dy7jb00co6sww" path="res://destination/saturn/saturn.tscn" id="19_3d3st"]
+[ext_resource type="AudioStream" uid="uid://cyd8rwntfkt0n" path="res://destination/saturn/saturn_radio_emissions.ogg" id="20_wquvw"]
 
 [sub_resource type="Environment" id="Environment_o638w"]
 background_mode = 3
@@ -136,6 +137,7 @@ title = "saturn_title"
 text = "saturn_text"
 credits = "saturn_audio_credits"
 light_color = Color(0.886275, 0.788235, 0.631373, 1)
+audio = ExtResource("20_wquvw")
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(-11000, 12000)
