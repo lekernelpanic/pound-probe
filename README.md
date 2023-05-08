@@ -64,7 +64,6 @@ Original space audio recordings provided courtesy of NASA and The University of 
 * [ The Eerie Sounds of Saturn's Radio Emissions ](https://space-audio.org/cassini/SKR1/)
 * [Cassini overview](https://solarsystem.nasa.gov/missions/cassini/overview/)
 * [Cassini moons](https://solarsystem.nasa.gov/missions/cassini/science/moons/)
-* [The Grand Finale](https://solarsystem.nasa.gov/missions/cassini/mission/grand-finale/overview/)
 
 Original space audio recordings provided courtesy of NASA and The University of Iowa. [https://space-audio.org/](https://space-audio.org/) Attribution 3.0 Unported (CC BY 3.0)
 
