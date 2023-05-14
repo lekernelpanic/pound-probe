@@ -149,7 +149,7 @@ probe = "tess"
 title = "iota_draconis_title"
 text = "iota_draconis_text"
 credits = "iota_draconis_audio_credits"
-light_color = Color(1, 1, 1, 0.1)
+light_color = Color(0.12549, 0.12549, 0.12549, 1)
 audio = ExtResource("22_dv7qt")
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
