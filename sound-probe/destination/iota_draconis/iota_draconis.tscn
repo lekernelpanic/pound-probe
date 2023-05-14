@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce2a4batqd7nm"]
+
+[ext_resource type="Script" path="res://destination/iota_draconis/iota_draconis.gd" id="2_18wx5"]
+[ext_resource type="Texture2D" uid="uid://cpod5k062p7ba" path="res://destination/iota_draconis/iota_draconis.svg" id="2_ujiw6"]
+
+[node name="iota_draconis" type="Sprite2D"]
+position = Vector2(-1675, -493)
+rotation = 0.523599
+texture = ExtResource("2_ujiw6")
+script = ExtResource("2_18wx5")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=26 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dm8vbk3iiqaom" path="res://stars/stars.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://6m1th1ca7y4" path="res://destination/parallax_layer/destination.tscn" id="4_tey06"]
 [ext_resource type="PackedScene" uid="uid://kw5lah6dr1o" path="res://introduction/introduction.tscn" id="6_85t5p"]
+[ext_resource type="PackedScene" uid="uid://ce2a4batqd7nm" path="res://destination/iota_draconis/iota_draconis.tscn" id="6_e7th0"]
 [ext_resource type="PackedScene" uid="uid://dd2mmddqms16h" path="res://destination/destination.tscn" id="7_sapxi"]
 [ext_resource type="PackedScene" uid="uid://3gpqro4fv0g1" path="res://destination/jupiter/jupiter.tscn" id="8_ojh24"]
 [ext_resource type="AudioStream" uid="uid://cjv2inhqnyx61" path="res://destination/jupiter/juno_waves_perijove_4.ogg" id="9_s6idr"]
@@ -138,6 +139,16 @@ text = "saturn_text"
 credits = "saturn_audio_credits"
 light_color = Color(0.886275, 0.788235, 0.631373, 1)
 audio = ExtResource("20_wquvw")
+
+[node name="iota_draconis" parent="." instance=ExtResource("7_sapxi")]
+position = Vector2(35000, 0)
+background = ExtResource("6_e7th0")
+layer = NodePath("../parallax_background/destination")
+probe = "voyager_1"
+title = "iota_draconis_title"
+text = "iota_draconis_text"
+credits = "iota_draconis_audio_credits"
+light_color = Color(1, 1, 1, 0.1)
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(-11000, 12000)
