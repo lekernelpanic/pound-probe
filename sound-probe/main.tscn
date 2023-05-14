@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=27 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://chkpb83qnsemv" path="res://destination/sun/sun_sonification.ogg" id="18_lsby1"]
 [ext_resource type="PackedScene" uid="uid://dy7jb00co6sww" path="res://destination/saturn/saturn.tscn" id="19_3d3st"]
 [ext_resource type="AudioStream" uid="uid://cyd8rwntfkt0n" path="res://destination/saturn/saturn_radio_emissions.ogg" id="20_wquvw"]
+[ext_resource type="AudioStream" uid="uid://cpxehhskkcr8l" path="res://destination/iota_draconis/edasich_sonification.ogg" id="22_dv7qt"]
 
 [sub_resource type="Environment" id="Environment_o638w"]
 background_mode = 3
@@ -149,6 +150,7 @@ title = "iota_draconis_title"
 text = "iota_draconis_text"
 credits = "iota_draconis_audio_credits"
 light_color = Color(1, 1, 1, 0.1)
+audio = ExtResource("22_dv7qt")
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
 position = Vector2(-11000, 12000)
