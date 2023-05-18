@@ -2,7 +2,7 @@ extends Sprite2D
 # Apply rotation.
 
 
-const ROTATION_SPEED = 0.05
+const ROTATION_SPEED: float = 0.05
 
 
 func _process(delta) -> void:
