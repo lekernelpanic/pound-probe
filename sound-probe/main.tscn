@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=28 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="FontFile" uid="uid://c5bqdhastxdiw" path="res://text/OpenSans-Medium.ttf" id="2_5vomp"]
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cnnrckmgrspv" path="res://map/map.tscn" id="3_vb6l3"]
 [ext_resource type="PackedScene" uid="uid://dm8vbk3iiqaom" path="res://stars/stars.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://6m1th1ca7y4" path="res://destination/parallax_layer/destination.tscn" id="4_tey06"]
 [ext_resource type="PackedScene" uid="uid://kw5lah6dr1o" path="res://introduction/introduction.tscn" id="6_85t5p"]
@@ -39,6 +40,7 @@ script = ExtResource("10")
 environment = SubResource("Environment_o638w")
 
 [node name="ui" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="exit" type="Label" parent="ui"]
 visible = false
@@ -50,6 +52,19 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_fonts/font = ExtResource("2_5vomp")
 theme_override_font_sizes/font_size = 42
 text = "exit"
+
+[node name="map" parent="ui" instance=ExtResource("3_vb6l3")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -564.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = 564.0
+grow_horizontal = 0
+probe = NodePath("../../probe")
+destinations = Array[NodePath]([NodePath("../../earth"), NodePath("../../mars"), NodePath("../../venus"), NodePath("../../sun"), NodePath("../../jupiter"), NodePath("../../saturn"), NodePath("../../iota_draconis"), NodePath("../../interstellar_space")])
+metadata/_edit_use_anchors_ = true
 
 [node name="touch_input" parent="ui" instance=ExtResource("12")]
 
