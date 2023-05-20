@@ -2,8 +2,9 @@ extends Node2D
 # Particles and sound of thrusters.
 
 
-const POWER: float = 150
-const ROTATION_POWER: float = 500
+const POWER: float = 400
+const MAX_SPEED: float = 1000
+const ROTATION_POWER: float = 1000
 const MAX_ANGULAR_VELOCITY: float = 0.04
 const CLOCKWISE: Dictionary = {
 		"left": 0.5 * PI,
@@ -62,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		thrust = thrust.round() * POWER
 		
 		thrust_rotation = _automatic_stabilisation()
-
+	
 	if thrust.length() > 0:
 		_thrust_particules(thrust)
 		thrust = thrust.rotated(get_global_rotation())
@@ -71,6 +72,9 @@ func _physics_process(delta: float) -> void:
 	if abs(thrust_rotation) > 0:
 		_thrust_rotation_particules(thrust_rotation)
 		owner.apply_torque_impulse(thrust_rotation * delta)
+	
+	if owner.linear_velocity.length() > MAX_SPEED + 1:
+		owner.linear_velocity = owner.linear_velocity.normalized() * MAX_SPEED
 	
 	if thrust.length() > 0 or abs(thrust_rotation) > 0:
 		_audio(true)
