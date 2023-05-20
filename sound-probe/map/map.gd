@@ -1,10 +1,8 @@
 extends Control
-# Draw map. A circle for the map, a dot for the probe
-# and a dot for destinations.
+# Draw the map for destinations, color changes when destinations are visited.
 
 
 const SCALE: float = 0.004
-#const RADIUS: float = 200.0
 const VALIDATION_DISTANCE: float = 5000
 const CIRCLE_COLOR: Color = Color(1, 1, 1, 0.2)
 const PROBE_COLOR: Color = Color(1, 1, 1, 1)

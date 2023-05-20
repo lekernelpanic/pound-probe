@@ -74,14 +74,24 @@ one_shot = true
 [node name="parallax_background" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
 
-[node name="deep_sky" type="ParallaxLayer" parent="parallax_background"]
-motion_scale = Vector2(0.2, 0.2)
+[node name="stars" type="ParallaxLayer" parent="parallax_background"]
+motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(20000, 20000)
 
-[node name="stars" parent="parallax_background/deep_sky" instance=ExtResource("4")]
+[node name="stars" parent="parallax_background/stars" instance=ExtResource("4")]
 local_coords = true
 
-[node name="destination" parent="parallax_background" instance=ExtResource("4_tey06")]
+[node name="deep_sky" parent="parallax_background" instance=ExtResource("4_tey06")]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="sun" parent="parallax_background" instance=ExtResource("4_tey06")]
+motion_scale = Vector2(0.15, 0.15)
+
+[node name="giant_planets" parent="parallax_background" instance=ExtResource("4_tey06")]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="telluric_planets" parent="parallax_background" instance=ExtResource("4_tey06")]
+motion_scale = Vector2(0.25, 0.25)
 
 [node name="canvas_modulate" type="CanvasModulate" parent="."]
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -91,9 +101,9 @@ color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 [node name="introduction" parent="." instance=ExtResource("6_85t5p")]
 
 [node name="earth" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(8000, 6000)
+position = Vector2(7200, 6300)
 background = ExtResource("9_uut2j")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/telluric_planets")
 probe = "van_allen_probe"
 title = "earth_title"
 text = "earth_text"
@@ -102,9 +112,9 @@ light_color = Color(0.121569, 0.172549, 0.329412, 1)
 audio = ExtResource("10_yxq8j")
 
 [node name="mars" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(-10000, -10000)
+position = Vector2(9200, -16000)
 background = ExtResource("11_afeiu")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/telluric_planets")
 probe = "mars_2020_spacecraft"
 title = "mars_title"
 text = "mars_text"
@@ -113,9 +123,9 @@ light_color = Color(0.807843, 0.568627, 0.462745, 1)
 audio = ExtResource("12_2621c")
 
 [node name="venus" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(7000, -14000)
+position = Vector2(-32000, 0)
 background = ExtResource("13_xymd2")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/telluric_planets")
 probe = "parker_polar_probe"
 title = "venus_title"
 text = "venus_text"
@@ -124,9 +134,9 @@ light_color = Color(0.411765, 0.176471, 0.0352941, 1)
 audio = ExtResource("14_xwtqm")
 
 [node name="sun" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(-30000, 0)
+position = Vector2(-14000, 44000)
 background = ExtResource("17_tgeb1")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/sun")
 probe = "soho"
 title = "sun_title"
 text = "sun_text"
@@ -135,9 +145,9 @@ light_color = Color(2, 2, 2, 1)
 audio = ExtResource("18_lsby1")
 
 [node name="jupiter" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(22000, -10000)
+position = Vector2(36000, 50000)
 background = ExtResource("8_ojh24")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/giant_planets")
 probe = "juno"
 title = "jupiter_title"
 text = "jupiter_text"
@@ -146,9 +156,9 @@ light_color = Color(0.756863, 0.490196, 0.380392, 1)
 audio = ExtResource("9_s6idr")
 
 [node name="saturn" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(0, 20000)
+position = Vector2(75000, 22000)
 background = ExtResource("19_3d3st")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/giant_planets")
 probe = "cassini"
 title = "saturn_title"
 text = "saturn_text"
@@ -157,9 +167,9 @@ light_color = Color(0.886275, 0.788235, 0.631373, 1)
 audio = ExtResource("20_wquvw")
 
 [node name="iota_draconis" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(35000, 0)
+position = Vector2(89000, -22000)
 background = ExtResource("6_e7th0")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/deep_sky")
 probe = "tess"
 title = "iota_draconis_title"
 text = "iota_draconis_text"
@@ -168,9 +178,9 @@ light_color = Color(0.12549, 0.12549, 0.12549, 1)
 audio = ExtResource("22_dv7qt")
 
 [node name="interstellar_space" parent="." instance=ExtResource("7_sapxi")]
-position = Vector2(-11000, 12000)
+position = Vector2(48000, -113000)
 background = ExtResource("11_24t2h")
-layer = NodePath("../parallax_background/destination")
+layer = NodePath("../parallax_background/deep_sky")
 probe = "voyager_1"
 title = "interstellar_space_title"
 text = "interstellar_space_text"
