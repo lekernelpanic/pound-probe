@@ -80,7 +80,7 @@ operator = 1
 
 [resource]
 code = "shader_type canvas_item;
-render_mode unshaded;
+render_mode blend_mix, unshaded;
 
 uniform bool on = true;
 uniform sampler2D tex_frg_8;
