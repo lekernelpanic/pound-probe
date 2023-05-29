@@ -13,19 +13,6 @@ func _input(event: InputEvent) -> void:
 			get_window().mode = Window.MODE_WINDOWED
 		else:
 			get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
-	
-	
-	if event.is_action_pressed("exit"):
-		$exit_timer.start()
-		$ui/exit.visible = true
-
-	if event.is_action_released("exit"):
-		$exit_timer.stop()
-		$ui/exit.visible = false
-
-
-func _on_exit_timer_timeout() -> void:
-	get_tree().quit()
 
 
 func _scale_adaptation() -> void:
