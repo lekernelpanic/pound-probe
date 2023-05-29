@@ -7,8 +7,6 @@ const MAX_DISTANCE: float = 30_000
 const DISTANCE_OFFSET: float = 1_000
 const MIN_SCALE: float = 0.1
 const MAX_SCALE: float = 1
-const MAX_LINEAR_VELOCITY: float = 50
-const MAX_ANGULAR_VELOCITY: float = 0.2
 
 var _asteroid_scenes: Array[Resource]
 var _rand: RandomNumberGenerator
@@ -41,9 +39,5 @@ func _generate_asteroid() -> RigidBody2D:
 	asteroid.position = Vector2(distance * cos(angle), distance * sin(angle))
 
 	asteroid.applied_scale = _rand.randf_range(MIN_SCALE, MAX_SCALE)
-	asteroid.linear_velocity = Vector2(
-			_rand.randf_range(-MAX_LINEAR_VELOCITY, MAX_LINEAR_VELOCITY),
-			_rand.randf_range(-MAX_LINEAR_VELOCITY, MAX_LINEAR_VELOCITY))
-	asteroid.angular_velocity = _rand.randf_range(0, MAX_ANGULAR_VELOCITY)
 	
 	return asteroid
