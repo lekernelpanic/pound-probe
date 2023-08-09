@@ -1,4 +1,4 @@
-# Sound probe
+# Sound Probe
 
 Vibrations of matter, particles, sound propagates in the air, in water, in any medium capable of vibrating. The vacuum of space is inhabited by a low density of particles, which by their tendency to be electrically charged interact with each other, vibrate. Space songs which cannot be heard directly by our ears, but can be heard by the sensitive instruments of the probes sailing in and sometimes outside our stellar system.
 
