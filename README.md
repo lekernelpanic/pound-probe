@@ -1,4 +1,4 @@
-# Sound probe
+# Sound Probe
 
 Vibrations of matter, particles, sound propagates in the air, in water, in any medium capable of vibrating. The vacuum of space is inhabited by a low density of particles, which by their tendency to be electrically charged interact with each other, vibrate. Space songs which cannot be heard directly by our ears, but can be heard by the sensitive instruments of the probes sailing in and sometimes outside our stellar system.
 
@@ -8,13 +8,13 @@ In this game, you will play a little space probe, floating, traveling, discoveri
 
 ## Project
 
-Powered by Godot engine 4.0.
+Powered by Godot engine 4.1.
 
 ### Licence
 
 This project is distributed under the terms of the GNU general public license.
 
-Assets are distributed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+Assets are distributed under Creative Commons Attribution-ShareAlike 4.0 International [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Sources
 

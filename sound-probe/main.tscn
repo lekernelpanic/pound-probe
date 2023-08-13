@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3ao72r1m0s5g"]
+[gd_scene load_steps=31 format=3 uid="uid://d3ao72r1m0s5g"]
 
 [ext_resource type="PackedScene" uid="uid://cd134xw2bqe7w" path="res://asteroids/asteroids.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://cnnrckmgrspv" path="res://map/map.tscn" id="3_vb6l3"]
@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://6m1th1ca7y4" path="res://destination/parallax_layer/destination.tscn" id="4_tey06"]
 [ext_resource type="PackedScene" uid="uid://kw5lah6dr1o" path="res://introduction/introduction.tscn" id="6_85t5p"]
 [ext_resource type="PackedScene" uid="uid://ce2a4batqd7nm" path="res://destination/iota_draconis/iota_draconis.tscn" id="6_e7th0"]
+[ext_resource type="PackedScene" uid="uid://dr37qjym2qg54" path="res://asteroids/asteroid_0/asteroid.tscn" id="7_b4b01"]
 [ext_resource type="PackedScene" uid="uid://dd2mmddqms16h" path="res://destination/destination.tscn" id="7_sapxi"]
 [ext_resource type="PackedScene" uid="uid://3gpqro4fv0g1" path="res://destination/jupiter/jupiter.tscn" id="8_ojh24"]
+[ext_resource type="PackedScene" uid="uid://d17wh7t3cu36x" path="res://asteroids/asteroid_1/asteroid.tscn" id="8_t560s"]
+[ext_resource type="PackedScene" uid="uid://dpx1rs3mscvvg" path="res://asteroids/asteroid_2/asteroid.tscn" id="9_ptssi"]
 [ext_resource type="AudioStream" uid="uid://cjv2inhqnyx61" path="res://destination/jupiter/juno_waves_perijove_4.ogg" id="9_s6idr"]
 [ext_resource type="PackedScene" uid="uid://bl6segc6p5dbg" path="res://destination/earth/earth.tscn" id="9_uut2j"]
 [ext_resource type="Script" path="res://main.gd" id="10"]
 [ext_resource type="PackedScene" uid="uid://bmjvm15nkuta2" path="res://probe/probe.tscn" id="10_hl08m"]
+[ext_resource type="PackedScene" uid="uid://cb6pl1jv6i1m4" path="res://asteroids/asteroid_3/asteroid.tscn" id="10_iadcv"]
 [ext_resource type="AudioStream" uid="uid://br5xl7ftas3qt" path="res://destination/earth/van_allen.ogg" id="10_yxq8j"]
 [ext_resource type="PackedScene" uid="uid://bgyjf12g6im7g" path="res://destination/interstellar_space/interstellar_space.tscn" id="11_24t2h"]
 [ext_resource type="PackedScene" uid="uid://db2xj1hl1ges0" path="res://destination/mars/mars.tscn" id="11_afeiu"]
@@ -82,6 +86,7 @@ motion_scale = Vector2(0.25, 0.25)
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="asteroids" parent="." instance=ExtResource("3")]
+asteroid_scenes = Array[Resource]([ExtResource("7_b4b01"), ExtResource("8_t560s"), ExtResource("9_ptssi"), ExtResource("10_iadcv")])
 
 [node name="introduction" parent="." instance=ExtResource("6_85t5p")]
 
