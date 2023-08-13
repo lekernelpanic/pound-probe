@@ -14,7 +14,7 @@ Powered by Godot engine 4.1.
 
 This project is distributed under the terms of the GNU general public license.
 
-Assets are distributed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+Assets are distributed under Creative Commons Attribution-ShareAlike 4.0 International [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Sources
 
