@@ -23,7 +23,7 @@ func _init() -> void:
 
 func _ready():
 	_radius = size.x / 2.0
-	for destination in destinations:
+	for destination: NodePath in destinations:
 		_is_destination_visited[destination] = false
 
 
