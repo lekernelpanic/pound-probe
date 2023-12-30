@@ -35,7 +35,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	for i in range(DEFINITION):
+	for i: int in range(DEFINITION):
 		var mag: float = _spectrum.get_magnitude_for_frequency_range(
 				_frequency_interval * i,
 				_frequency_interval * (i + 1)).length()
@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 
 
 func _draw() -> void:
-	for i in range(_histogram.size()):
+	for i: int in range(_histogram.size()):
 		var bar_size: float = _histogram[i] * size.x
 		var relative_position: Vector2 = Vector2(
 				-bar_size / 2.0,

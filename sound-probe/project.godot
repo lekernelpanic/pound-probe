@@ -12,8 +12,9 @@ config_version=5
 
 config/name="Sound Probe"
 config/description="A little spacecraft discovering sounds of space."
+config/version="1.0.2"
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.1")
+config/features=PackedStringArray("4.2")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://splash_screen.png"
 config/icon="res://icon.png"
@@ -25,6 +26,15 @@ window/size/viewport_height=2160
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://asteroids/": "red",
+"res://destination/": "orange",
+"res://introduction/": "orange",
+"res://probe/": "blue"
+}
 
 [filesystem]
 

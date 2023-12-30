@@ -12,7 +12,7 @@ func _ready() -> void:
 	grab_focus()
 	
 	var i: int = 0
-	for locale_name in LOCALES_NAMES:
+	for locale_name: String in LOCALES_NAMES:
 		
 		add_item(LOCALES_NAMES[locale_name], i)
 		set_item_metadata(i, locale_name)
