@@ -44,9 +44,9 @@ func _physics_process(delta: float) -> void:
 	var thrust: Vector2 = Vector2()
 	var thrust_rotation: float = 0
 	
-	for particles_name in _thrust_particles:
+	for particles_name: String in _thrust_particles:
 		_thrust_particles[particles_name].emitting = false
-	for particles_name in _rotate_particles:
+	for particles_name: String in _rotate_particles:
 		_rotate_particles[particles_name].emitting = false
 	
 	if activated:
@@ -95,13 +95,13 @@ func _thrust_particules(thrust: Vector2) -> void:
 
 func _thrust_rotation_particules(thrust_rotation: float) -> void:
 	if thrust_rotation > 0:
-		for particles in _rotate_particles:
+		for particles: String in _rotate_particles:
 			_rotate_particles[particles].rotation = CLOCKWISE[particles]
 	elif thrust_rotation < 0:
-		for particles in _rotate_particles:
+		for particles: String in _rotate_particles:
 			_rotate_particles[particles].rotation = COUNTERCLOCKWISE[particles]
 	
-	for particles_name in _rotate_particles:
+	for particles_name: String in _rotate_particles:
 		_rotate_particles[particles_name].emitting = true
 
 

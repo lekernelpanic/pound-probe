@@ -37,7 +37,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if _transiting:
 		_transiting = false
-		for probe_name in _probe_nodes:
+		for probe_name: String in _probe_nodes:
 			_transiting = _manage_tranition(probe_name, delta) or _transiting
 
 
@@ -74,7 +74,7 @@ func _on_recover_timer_timeout() -> void:
 func _activate_probe(activated: bool) -> void:
 	$thrusters.activated = activated
 	$light.enabled = activated
-	for probe_name in _probe_nodes:
+	for probe_name: String in _probe_nodes:
 		_probe_nodes[probe_name].get_child(0).material.set_shader_parameter(
 				"on", activated)
 

@@ -8,7 +8,7 @@ In this game, you will play a little space probe, floating, traveling, discoveri
 
 ## Project
 
-Powered by Godot engine 4.1.
+Powered by Godot engine 4.2.
 
 ### Licence
 
